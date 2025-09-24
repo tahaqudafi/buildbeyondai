@@ -43,8 +43,7 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-subheading text-muted-foreground max-w-3xl mx-auto mb-10 animate-fade-up [animation-delay:200ms]">
-            24/7 phone coverage for sales and operations, qualify leads, handle calls,
-            and sync your CRM automatically with human-level voice quality.
+            24/7 phone coverage with human-level voice, qualifying leads, handling calls, and syncing your CRM automatically.
           </p>
 
           {/* CTAs */}
