@@ -4,12 +4,12 @@ import { Play, ArrowRight, Phone, Clock, TrendingUp, DollarSign } from "lucide-r
 
 const Hero = () => {
   const trustLogos = [
-    { name: "Telnyx", src: "/src/assets/images/telnyx.svg" },
-    { name: "Twilio", src: "/src/assets/images/twillio.svg" },
-    { name: "ElevenLabs", src: "/src/assets/images/11labs.svg" },
-    { name: "Retell", src: "/src/assets/images/retell.svg" },
-    { name: "Gigas", src: "/src/assets/images/gigas.svg" },
-    { name: "OpenRouter", src: "/src/assets/images/OR.svg" }
+    { name: "Telnyx", src: "/images/telnyx.svg" },
+    { name: "Twilio", src: "/images/twillio.svg" },
+    { name: "ElevenLabs", src: "/images/11labs.svg" },
+    { name: "Retell", src: "/images/retell.svg" },
+    { name: "Gigas", src: "/images/gigas.svg" },
+    { name: "OpenRouter", src: "/images/OR.svg" }
   ];
 
   const statsItems = [

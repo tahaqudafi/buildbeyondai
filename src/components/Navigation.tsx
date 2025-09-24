@@ -24,7 +24,7 @@ const Navigation = () => {
           <div className="flex-shrink-0">
             <div className="flex items-center">
               <img
-                src="/src/assets/images/logo.svg"
+                src="/images/logo.svg"
                 alt="Vocalytics Logo"
                 className="h-12 w-auto"
               />

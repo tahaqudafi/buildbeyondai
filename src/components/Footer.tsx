@@ -47,7 +47,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
               <img
-                src="/src/assets/images/path10.svg"
+                src="/images/path10.svg"
                 alt="Vocalytics Logo"
                 className="h-10 w-auto"
               />
