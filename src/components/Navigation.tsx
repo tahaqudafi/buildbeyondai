@@ -58,7 +58,12 @@ const Navigation = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground"
+              className={cn(
+                "transition-all duration-200",
+                isOpen
+                  ? "bg-primary text-primary-foreground hover:bg-primary-hover"
+                  : "text-foreground hover:bg-secondary"
+              )}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
