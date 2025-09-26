@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { TimelineDemo } from "./TimelineDemo";
 
 const HowItWorks = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -10,13 +11,13 @@ const HowItWorks = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
+
     // Reset after 5 seconds
     setTimeout(() => {
       setIsSubmitted(false);
@@ -78,44 +79,7 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
-          {/* Connection Lines */}
-          <div className="hidden lg:block absolute top-1/2 left-1/3 w-1/3 h-0.5 bg-gradient-to-r from-primary/50 to-accent/50 transform -translate-y-1/2"></div>
-          <div className="hidden lg:block absolute top-1/2 right-1/3 w-1/3 h-0.5 bg-gradient-to-r from-primary/50 to-accent/50 transform -translate-y-1/2"></div>
-
-          {steps.map((step, index) => (
-            <Card key={index} className="card-elevated relative z-10 group hover:scale-105 transition-all duration-300">
-              <div className="text-center">
-                {/* Step Number */}
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary hover:bg-primary/90 rounded-2xl mb-2 text-2xl font-bold text-primary-foreground group-hover:scale-110 transition-all duration-300">
-                  {step.step}
-                </div>
-
-                {/* Timeline Badge - moved under step number */}
-                <div className="flex justify-center mb-6">
-                  <Badge className="bg-secondary/50 text-foreground border-border/50">
-                    {step.timeline}
-                  </Badge>
-                </div>
-
-                <h3 className="text-xl font-semibold mb-4">{step.title}</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {step.description}
-                </p>
-
-                {/* Details List */}
-                <ul className="space-y-2 text-sm text-left">
-                  {step.details.map((detail, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span className="text-muted-foreground">{detail}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Card>
-          ))}
-        </div>
+        <TimelineDemo />
 
         {/* Contact Form */}
         <div className="mt-16">
@@ -137,7 +101,7 @@ const HowItWorks = () => {
                       <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-full mb-4 animate-pulse">
                         <CheckCircle className="h-12 w-12 text-white animate-in zoom-in duration-700 delay-200" />
                       </div>
-                      
+
                       {/* Sparkle Effects */}
                       <div className="absolute -top-2 -right-2 animate-bounce delay-300">
                         <Sparkles className="h-6 w-6 text-white/80" />
@@ -149,14 +113,14 @@ const HowItWorks = () => {
                         <Sparkles className="h-5 w-5 text-white/80" />
                       </div>
                     </div>
-                    
+
                     <h3 className="text-2xl font-bold mb-3 animate-in slide-in-from-bottom duration-500 delay-300">
                       Message Sent Successfully! 🎉
                     </h3>
                     <p className="text-lg opacity-90 animate-in slide-in-from-bottom duration-500 delay-500">
                       Thank you for reaching out! We'll get back to you within 24 hours.
                     </p>
-                    
+
                     {/* Animated Progress Bar */}
                     <div className="mt-6 w-64 mx-auto">
                       <div className="h-1 bg-white/20 rounded-full overflow-hidden">
@@ -169,138 +133,137 @@ const HowItWorks = () => {
               )}
 
               <form onSubmit={handleSubmit} className={`grid grid-cols-1 md:grid-cols-2 gap-6 transition-opacity duration-300 ${isSubmitted ? 'opacity-20' : 'opacity-100'}`}>
-              <div className="space-y-2">
-                <label htmlFor="firstName" className="text-sm font-medium text-foreground">
-                  First Name *
-                </label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  required
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
-                  placeholder="Enter your first name"
-                />
-              </div>
+                <div className="space-y-2">
+                  <label htmlFor="firstName" className="text-sm font-medium text-foreground">
+                    First Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                    placeholder="Enter your first name"
+                  />
+                </div>
 
-              <div className="space-y-2">
-                <label htmlFor="lastName" className="text-sm font-medium text-foreground">
-                  Last Name *
-                </label>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  required
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
-                  placeholder="Enter your last name"
-                />
-              </div>
+                <div className="space-y-2">
+                  <label htmlFor="lastName" className="text-sm font-medium text-foreground">
+                    Last Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    required
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                    placeholder="Enter your last name"
+                  />
+                </div>
 
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-foreground">
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
-                  placeholder="Enter your email"
-                />
-              </div>
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-sm font-medium text-foreground">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                    placeholder="Enter your email"
+                  />
+                </div>
 
-              <div className="space-y-2">
-                <label htmlFor="phone" className="text-sm font-medium text-foreground">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
-                  placeholder="Enter your phone number"
-                />
-              </div>
+                <div className="space-y-2">
+                  <label htmlFor="phone" className="text-sm font-medium text-foreground">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                    placeholder="Enter your phone number"
+                  />
+                </div>
 
-              <div className="space-y-2">
-                <label htmlFor="company" className="text-sm font-medium text-foreground">
-                  Company Name *
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  required
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
-                  placeholder="Enter your company name"
-                />
-              </div>
+                <div className="space-y-2">
+                  <label htmlFor="company" className="text-sm font-medium text-foreground">
+                    Company Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    required
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                    placeholder="Enter your company name"
+                  />
+                </div>
 
-              <div className="space-y-2">
-                <label htmlFor="industry" className="text-sm font-medium text-foreground">
-                  Industry
-                </label>
-                <select
-                  id="industry"
-                  name="industry"
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
-                >
-                  <option value="">Select your industry</option>
-                  <option value="healthcare">Healthcare</option>
-                  <option value="real-estate">Real Estate</option>
-                  <option value="automotive">Automotive</option>
-                  <option value="professional-services">Professional Services</option>
-                  <option value="retail">Retail</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
+                <div className="space-y-2">
+                  <label htmlFor="industry" className="text-sm font-medium text-foreground">
+                    Industry
+                  </label>
+                  <select
+                    id="industry"
+                    name="industry"
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                  >
+                    <option value="">Select your industry</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="real-estate">Real Estate</option>
+                    <option value="automotive">Automotive</option>
+                    <option value="professional-services">Professional Services</option>
+                    <option value="retail">Retail</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
 
-              <div className="md:col-span-2 space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-foreground">
-                  Tell us about your needs
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 resize-none"
-                  placeholder="Describe your current phone system challenges and what you're looking to achieve..."
-                ></textarea>
-              </div>
+                <div className="md:col-span-2 space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium text-foreground">
+                    Tell us about your needs
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 resize-none"
+                    placeholder="Describe your current phone system challenges and what you're looking to achieve..."
+                  ></textarea>
+                </div>
 
-              <div className="md:col-span-2 text-center">
-                <button
-                  type="submit"
-                  disabled={isSubmitting || isSubmitted}
-                  className={`btn-hero px-8 py-4 text-lg transition-all duration-300 ${
-                    isSubmitting 
-                      ? 'opacity-75 cursor-not-allowed transform scale-95' 
-                      : isSubmitted 
-                        ? 'opacity-50 cursor-not-allowed' 
-                        : 'hover:scale-105'
-                  }`}
-                >
-                  {isSubmitting ? (
-                    <span className="flex items-center gap-2">
-                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                      Sending...
-                    </span>
-                  ) : isSubmitted ? (
-                    <span className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5" />
-                      Sent!
-                    </span>
-                  ) : (
-                    'Send Message'
-                  )}
-                </button>
-                <p className="text-sm text-muted-foreground mt-4">
-                  We'll respond within 24 hours •  30-day money-back guarantee
-                </p>
-              </div>
-            </form>
+                <div className="md:col-span-2 text-center">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting || isSubmitted}
+                    className={`btn-hero px-8 py-4 text-lg transition-all duration-300 ${isSubmitting
+                        ? 'opacity-75 cursor-not-allowed transform scale-95'
+                        : isSubmitted
+                          ? 'opacity-50 cursor-not-allowed'
+                          : 'hover:scale-105'
+                      }`}
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center gap-2">
+                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                        Sending...
+                      </span>
+                    ) : isSubmitted ? (
+                      <span className="flex items-center gap-2">
+                        <CheckCircle className="h-5 w-5" />
+                        Sent!
+                      </span>
+                    ) : (
+                      'Send Message'
+                    )}
+                  </button>
+                  <p className="text-sm text-muted-foreground mt-4">
+                    We'll respond within 24 hours •  30-day money-back guarantee
+                  </p>
+                </div>
+              </form>
             </div>
           </div>
         </div>

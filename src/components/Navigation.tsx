@@ -19,9 +19,9 @@ const Navigation = () => {
       isVisible ? "translate-y-0" : "-translate-y-full"
     )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
+        <div className="flex justify-between lg:justify-between items-center h-16 relative">
+          {/* Logo - Centered on mobile, left-aligned on desktop */}
+          <div className="flex-shrink-0 lg:flex-shrink-0 absolute left-1/2 transform -translate-x-1/2 lg:relative lg:left-auto lg:transform-none">
             <div className="flex items-center">
               <img
                 src="/images/logo2.svg"
@@ -52,9 +52,8 @@ const Navigation = () => {
             </div>
           </div>
 
-
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden ml-auto">
             <Button
               variant="ghost"
               size="sm"
