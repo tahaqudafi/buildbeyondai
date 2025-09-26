@@ -47,7 +47,7 @@ const Hero = () => {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-up [animation-delay:400ms]">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Button
               size="lg"
               className="btn-hero text-lg px-8 py-4"
@@ -67,7 +67,7 @@ const Hero = () => {
 
 
           {/* Trust Bar */}
-          <div className="animate-fade-up [animation-delay:800ms]">
+          <div>
             <p className="text-sm text-muted-foreground mb-6">
               Powered by enterprise-grade technology
             </p>
