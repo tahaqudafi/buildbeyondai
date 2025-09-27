@@ -1,28 +1,12 @@
 import { Phone, Mail, MapPin, Linkedin, Twitter, Youtube } from "lucide-react";
 
 const Footer = () => {
-  const productLinks = [
-    { name: "Outbound Sales", href: "/solutions/outbound-sales" },
-    { name: "AI Receptionist", href: "/solutions/receptionist" },
-    { name: "Appointment Setting", href: "/solutions/appointment-setting" },
-    { name: "How It Works", href: "/how-it-works" },
-    { name: "Pricing", href: "/pricing" }
-  ];
-
   const companyLinks = [
     { name: "About Us", href: "/about" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "Security", href: "/security" },
     { name: "Contact", href: "/contact" },
     { name: "Book Demo", href: "/book-demo" }
-  ];
-
-  const resourceLinks = [
-    { name: "Blog", href: "/resources" },
-    { name: "Integration Guides", href: "/resources/integrations" },
-    { name: "API Documentation", href: "/resources/api" },
-    { name: "Help Center", href: "/resources/help" },
-    { name: "Status Page", href: "/status" }
   ];
 
   const legalLinks = [
@@ -42,10 +26,10 @@ const Footer = () => {
   return (
     <footer className="bg-card/50 border-t border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="space-y-8">
           {/* Company Info */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center mb-6">
+          <div className="text-center lg:text-left">
+            <div className="flex items-center justify-center lg:justify-start mb-6">
               <img
                 src="/images/path10.svg"
                 alt="Vocalytics Logo"
@@ -53,27 +37,27 @@ const Footer = () => {
               />
             </div>
 
-            <p className="text-muted-foreground mb-6 max-w-md leading-relaxed">
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               Transform your business phone experience with AI voice agents that work 24/7,
               sound completely human, and drive real results.
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-3 text-sm">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 text-sm mb-6">
               <div className="flex items-center text-muted-foreground">
                 <MapPin className="h-4 w-4 mr-3 flex-shrink-0" />
                 <span>Barcelona, Spain</span>
               </div>
               <div className="flex items-center text-muted-foreground">
                 <Mail className="h-4 w-4 mr-3 flex-shrink-0" />
-                <a href="mailto:hello@vocalytics.com" className="hover:text-foreground transition-colors">
-                  hello@vocalytics.com
+                <a href="mailto:taha@buildbeyondai.com" className="hover:text-foreground transition-colors">
+                  taha@buildbeyondai.com
                 </a>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="flex space-x-4 mt-6">
+            <div className="flex justify-center lg:justify-start space-x-4">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -87,55 +71,20 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Product Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Product</h3>
-            <ul className="space-y-3">
-              {productLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company Links */}
-          <div>
+          {/* Company Links - Horizontal */}
+          <div className="text-center lg:text-left">
             <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-3">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-6">
               {companyLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                  >
-                    {link.name}
-                  </a>
-                </li>
+                <a
+                  key={index}
+                  href={link.href}
+                  className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                >
+                  {link.name}
+                </a>
               ))}
-            </ul>
-          </div>
-
-          {/* Resources Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Resources</h3>
-            <ul className="space-y-3">
-              {resourceLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            </div>
           </div>
         </div>
 
@@ -163,7 +112,7 @@ const Footer = () => {
               </div>
 
               <div className="text-sm text-muted-foreground">
-                © 2024 Build Beyond. All rights reserved.
+                © 2025 Build Beyond. All rights reserved.
               </div>
             </div>
           </div>
