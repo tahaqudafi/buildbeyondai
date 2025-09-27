@@ -4,6 +4,19 @@ import { Play, ArrowRight, Phone, Clock, TrendingUp, DollarSign } from "lucide-r
 import { motion } from "framer-motion";
 
 const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const elementPosition = element.offsetTop;
+      const offsetPosition = elementPosition - 100; // Scroll 100px higher than the element
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const trustLogos = [
     { name: "Telnyx", src: "/images/telnyx.svg" },
     { name: "Twilio", src: "/images/twillio.svg" },
@@ -93,6 +106,7 @@ const Hero = () => {
               <Button
                 size="lg"
                 className="btn-hero text-lg px-8 py-4"
+                onClick={() => scrollToSection('get-started')}
               >
                 Book a Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -106,6 +120,7 @@ const Hero = () => {
                 variant="outline"
                 size="lg"
                 className="btn-ghost-light text-lg px-8 py-4"
+                onClick={() => scrollToSection('hear-it-in-action')}
               >
                 <Play className="mr-2 h-5 w-5" />
                 Hear a Live Sample

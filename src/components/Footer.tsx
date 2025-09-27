@@ -1,12 +1,25 @@
 import { Phone, Mail, MapPin, Linkedin, Twitter, Youtube } from "lucide-react";
 
 const Footer = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const elementPosition = element.offsetTop;
+      const offsetPosition = elementPosition - 100; // Scroll 100px higher than the element
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const companyLinks = [
     { name: "About Us", href: "/about" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "Security", href: "/security" },
-    { name: "Contact", href: "/contact" },
-    { name: "Book Demo", href: "/book-demo" }
+    { name: "Contact", href: "#", onClick: (e: React.MouseEvent) => { e.preventDefault(); scrollToSection('get-started'); } },
+    { name: "Book Demo", href: "#", onClick: (e: React.MouseEvent) => { e.preventDefault(); scrollToSection('get-started'); } }
   ];
 
   const legalLinks = [
@@ -79,7 +92,8 @@ const Footer = () => {
                 <a
                   key={index}
                   href={link.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                  onClick={link.onClick}
+                  className="text-muted-foreground hover:text-foreground transition-colors text-sm cursor-pointer"
                 >
                   {link.name}
                 </a>
