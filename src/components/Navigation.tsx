@@ -8,9 +8,21 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { isVisible } = useScrollDirection();
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const elementPosition = element.offsetTop;
+      const offsetPosition = elementPosition - 100; // Scroll 100px above the section
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const navItems = [
-    { name: "Pricing", href: "/pricing" },
-    { name: "Case Studies", href: "/case-studies" },
+    { name: "Contact", action: () => scrollToSection("get-started") },
   ];
 
   return (
@@ -35,20 +47,14 @@ const Navigation = () => {
           <div className="hidden lg:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
-                  className="nav-link text-sm font-medium px-3 py-2"
+                  onClick={item.action}
+                  className="nav-link text-sm font-medium px-3 py-2 bg-transparent border-none cursor-pointer"
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
-              <a
-                href="/security"
-                className="nav-link text-sm font-medium px-3 py-2 text-muted-foreground"
-              >
-                Security
-              </a>
             </div>
           </div>
 
@@ -77,22 +83,17 @@ const Navigation = () => {
         )}>
           <div className="px-2 pt-2 pb-3 space-y-1 border-t border-border/50 mt-4">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                className="block px-3 py-2 text-base font-medium text-foreground/80 hover:text-foreground transition-colors"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  item.action();
+                  setIsOpen(false);
+                }}
+                className="block px-3 py-2 text-base font-medium text-foreground/80 hover:text-foreground transition-colors w-full text-left bg-transparent border-none cursor-pointer"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
-            <a
-              href="/security"
-              className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Security
-            </a>
           </div>
         </div>
       </div>
