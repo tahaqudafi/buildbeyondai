@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { isVisible } = useScrollDirection();
+  const { t } = useLanguage();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -22,7 +24,7 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { name: "Contact", action: () => scrollToSection("get-started") },
+    { name: t("navigation.contact"), action: () => scrollToSection("get-started") },
   ];
 
   return (

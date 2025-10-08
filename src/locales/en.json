@@ -1,0 +1,23 @@
+{
+  "footer": {
+    "description": "Transform your business phone experience with AI voice agents that work 24/7, sound completely human, and drive real results.",
+    "location": "Barcelona, Spain",
+    "email": "taha@buildbeyondai.com",
+    "company": "Company",
+    "companyLinks": {
+      "aboutUs": "About Us",
+      "caseStudies": "Case Studies",
+      "security": "Security",
+      "contact": "Contact",
+      "bookDemo": "Book Demo"
+    },
+    "legalLinks": {
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "cookiePolicy": "Cookie Policy",
+      "dpa": "DPA",
+      "sla": "SLA"
+    },
+    "copyright": "© 2025 Build Beyond. All rights reserved."
+  }
+}

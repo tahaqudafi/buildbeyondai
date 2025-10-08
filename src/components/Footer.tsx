@@ -1,6 +1,8 @@
 import { Phone, Mail, MapPin, Linkedin, Twitter, Youtube } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Footer = () => {
+  const { language, setLanguage, t } = useLanguage();
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -15,19 +17,19 @@ const Footer = () => {
   };
 
   const companyLinks = [
-    { name: "About Us", href: "/about" },
-    { name: "Case Studies", href: "/case-studies" },
-    { name: "Security", href: "/security" },
-    { name: "Contact", href: "#", onClick: (e: React.MouseEvent) => { e.preventDefault(); scrollToSection('get-started'); } },
-    { name: "Book Demo", href: "#", onClick: (e: React.MouseEvent) => { e.preventDefault(); scrollToSection('get-started'); } }
+    { name: t("footer.companyLinks.aboutUs"), href: "/about" },
+    { name: t("footer.companyLinks.caseStudies"), href: "/case-studies" },
+    { name: t("footer.companyLinks.security"), href: "/security" },
+    { name: t("footer.companyLinks.contact"), href: "#", onClick: (e: React.MouseEvent) => { e.preventDefault(); scrollToSection('get-started'); } },
+    { name: t("footer.companyLinks.bookDemo"), href: "#", onClick: (e: React.MouseEvent) => { e.preventDefault(); scrollToSection('get-started'); } }
   ];
 
   const legalLinks = [
-    { name: "Privacy Policy", href: "/legal/privacy" },
-    { name: "Terms of Service", href: "/legal/terms" },
-    { name: "Cookie Policy", href: "/legal/cookies" },
-    { name: "DPA", href: "/legal/dpa" },
-    { name: "SLA", href: "/legal/sla" }
+    { name: t("footer.legalLinks.privacyPolicy"), href: "/legal/privacy" },
+    { name: t("footer.legalLinks.termsOfService"), href: "/legal/terms" },
+    { name: t("footer.legalLinks.cookiePolicy"), href: "/legal/cookies" },
+    { name: t("footer.legalLinks.dpa"), href: "/legal/dpa" },
+    { name: t("footer.legalLinks.sla"), href: "/legal/sla" }
   ];
 
   const socialLinks = [
@@ -51,20 +53,19 @@ const Footer = () => {
             </div>
 
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Transform your business phone experience with AI voice agents that work 24/7,
-              sound completely human, and drive real results.
+              {t("footer.description")}
             </p>
 
             {/* Contact Info */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 text-sm mb-6">
               <div className="flex items-center text-muted-foreground">
                 <MapPin className="h-4 w-4 mr-3 flex-shrink-0" />
-                <span>Barcelona, Spain</span>
+                <span>{t("footer.location")}</span>
               </div>
               <div className="flex items-center text-muted-foreground">
                 <Mail className="h-4 w-4 mr-3 flex-shrink-0" />
-                <a href="mailto:taha@buildbeyondai.com" className="hover:text-foreground transition-colors">
-                  taha@buildbeyondai.com
+                <a href={`mailto:${t("footer.email")}`} className="hover:text-foreground transition-colors">
+                  {t("footer.email")}
                 </a>
               </div>
             </div>
@@ -86,7 +87,7 @@ const Footer = () => {
 
           {/* Company Links - Horizontal */}
           <div className="text-center lg:text-left">
-            <h3 className="font-lemonmilk font-semibold mb-4">Company</h3>
+            <h3 className="font-lemonmilk font-semibold mb-4">{t("footer.company")}</h3>
             <div className="flex flex-wrap justify-center lg:justify-start gap-6">
               {companyLinks.map((link, index) => (
                 <a
@@ -120,13 +121,23 @@ const Footer = () => {
             <div className="flex items-center space-x-6">
               {/* Language Switcher */}
               <div className="flex items-center space-x-2">
-                <button className="text-sm text-foreground font-medium">EN</button>
+                <button 
+                  className={`text-sm font-medium transition-colors ${language === 'en' ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'}`}
+                  onClick={() => setLanguage('en')}
+                >
+                  EN
+                </button>
                 <span className="text-muted-foreground">|</span>
-                <button className="text-sm text-muted-foreground hover:text-foreground transition-colors">ES</button>
+                <button 
+                  className={`text-sm font-medium transition-colors ${language === 'es' ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'}`}
+                  onClick={() => setLanguage('es')}
+                >
+                  ES
+                </button>
               </div>
 
               <div className="text-sm text-muted-foreground">
-                © 2025 Build Beyond. All rights reserved.
+                {t("footer.copyright")}
               </div>
             </div>
           </div>

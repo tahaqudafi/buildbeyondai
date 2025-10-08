@@ -1,0 +1,214 @@
+{
+  "navigation": {
+    "contact": "Contacto"
+  },
+  "hero": {
+    "badge": "Cumple GDPR • Seguridad Empresarial • Soporte 24/7",
+    "headline": "Agentes de Voz IA que Reservan Más Citas y Cierran Más Ventas",
+    "subheadline": "Cobertura telefónica 24/7 con voz de nivel humano, calificando leads, manejando llamadas y sincronizando tu CRM automáticamente.",
+    "bookDemo": "Reservar Demo",
+    "hearSample": "Escuchar Muestra en Vivo",
+    "trustBar": "Impulsado por tecnología de nivel empresarial",
+    "stats": {
+      "responseTime": {
+        "label": "Tiempo de Respuesta",
+        "value": "<2min",
+        "change": "vs 2h promedio"
+      },
+      "conversionRate": {
+        "label": "Tasa de Conversión", 
+        "value": "+25%",
+        "change": "aumento"
+      },
+      "costSavings": {
+        "label": "Ahorro de Costos",
+        "value": "60%",
+        "change": "vs personal humano"
+      }
+    }
+  },
+  "valuePillars": {
+    "title": "¿Por Qué Elegir Agentes de Voz IA?",
+    "subtitle": "Transforma tu experiencia telefónica con IA que trabaja las 24 horas, suena completamente humana y genera resultados comerciales reales.",
+    "stats": {
+      "responseTime": {
+        "label": "Tiempo de Respuesta",
+        "value": "<2min",
+        "change": "vs 2h promedio"
+      },
+      "conversionRate": {
+        "label": "Tasa de Conversión",
+        "value": "+25%",
+        "change": "aumento"
+      },
+      "costSavings": {
+        "label": "Ahorro de Costos",
+        "value": "35%",
+        "change": "vs personal humano"
+      }
+    },
+    "pillars": {
+      "alwaysOn": {
+        "title": "Siempre Activo",
+        "description": "Nunca pierdas un lead con cobertura telefónica 24/7 que responde en menos de 2 minutos.",
+        "features": [
+          "Respuesta instantánea",
+          "Sin tiempos de espera", 
+          "Disponibilidad 24/7",
+          "Cobertura en feriados"
+        ]
+      },
+      "lowerCost": {
+        "title": "Menor Costo",
+        "description": "Reemplaza o complementa equipos de call center mejorando el tiempo de respuesta y consistencia.",
+        "features": [
+          "30%-45% reducción de costos",
+          "Sin días de enfermedad",
+          "Calidad consistente",
+          "Escalado instantáneo"
+        ]
+      },
+      "revenueReady": {
+        "title": "Listo para Ingresos",
+        "description": "Califica leads, programa citas, actualiza CRM y activa flujos de trabajo automatizados.",
+        "features": [
+          "Calificación de leads",
+          "Reserva de citas",
+          "Integración CRM",
+          "Activadores de flujo"
+        ]
+      },
+      "humanLevel": {
+        "title": "Voz de Nivel Humano",
+        "description": "Conversación natural con memoria, contexto e inteligencia emocional en la que los clientes confían.",
+        "features": [
+          "TTS de ElevenLabs",
+          "Conciencia contextual",
+          "Respuestas emocionales",
+          "Múltiples idiomas"
+        ]
+      }
+    }
+  },
+  "audioDemo": {
+    "title": "Escúchalo en Acción",
+    "subtitle": "Escucha conversaciones reales impulsadas por nuestros agentes de voz IA. Cada agente está personalizado para tu industria y caso de uso.",
+    "tabs": {
+      "receptionist": {
+        "name": "Recepcionista",
+        "description": "Respondiendo llamadas, reservando citas, manejando preguntas frecuentes",
+        "script": "Gracias por llamar a Metro Dental. Puedo reservarte una cita hoy - ¿puedo tener tu nombre y hora preferida? Aceptamos la mayoría de planes de seguro incluyendo BlueCross. Tengo disponible martes 10:30 o miércoles 4:00 PM. ¿Qué te funciona mejor?",
+        "duration": "0:32"
+      },
+      "outbound": {
+        "name": "Ventas Salientes",
+        "description": "Siguiendo leads, calificando prospectos", 
+        "script": "Hola Sarah, esta es la línea de reservas de Home Pro Services. Solicitaste una cotización para renovación de cocina ayer. Puedo programar que nuestro diseñador te visite esta semana - ¿te funciona mejor por la mañana o tarde?",
+        "duration": "0:28"
+      },
+      "reminder": {
+        "name": "Recordatorio de Cita",
+        "description": "Confirmando citas, reduciendo ausencias",
+        "script": "Hola Sr. Johnson, recordándole su cita mañana a las 2 PM con el Dr. Smith. Presione 1 para confirmar, 2 para reprogramar - puedo manejarlo ahora mismo. ¡De lo contrario, lo veremos mañana!",
+        "duration": "0:25"
+      }
+    },
+    "liveTranscript": "Transcripción en Vivo:"
+  },
+  "howItWorks": {
+    "badge": "Listo en menos de 3 Semanas",
+    "title": "Cómo Funciona",
+    "subtitle": "Ponte en marcha con agentes de voz IA de nivel empresarial en menos de 3 semanas. Nuestro proceso de implementación probado garantiza el éxito desde el primer día.",
+    "steps": {
+      "week1": {
+        "title": "Conectar y Configurar",
+        "description": "Conecta tu número telefónico y CRM. Configuraremos flujos de llamadas, configuraciones de cumplimiento y preferencias de voz.",
+        "features": [
+          "Portabilidad o reenvío de número telefónico",
+          "Integración CRM (Google calendar, Slack, etc.)",
+          "Especificaciones de industria",
+          "Configuración de cumplimiento y consentimiento"
+        ]
+      },
+      "week2": {
+        "title": "Personalizar y Entrenar", 
+        "description": "Construye flujos de conversación personalizados, entrena la IA con tus preguntas frecuentes y ajusta la voz para que coincida con tu marca.",
+        "features": [
+          "Diseño de flujo de conversación",
+          "Entrenamiento de FAQ y respuestas",
+          "Personalización del tono de voz",
+          "Pruebas de integración"
+        ]
+      },
+      "week3": {
+        "title": "Lanzar y Monitorear",
+        "description": "Lanza tu agente de voz IA con monitoreo en tiempo real, panel de análisis y optimización continua.",
+        "features": [
+          "Lanzamiento suave con monitoreo",
+          "Análisis en tiempo real", 
+          "Optimización de rendimiento",
+          "Soporte y monitoreo 24/7"
+        ]
+      }
+    }
+  },
+  "getStarted": {
+    "title": "Comienza Hoy",
+    "subtitle": "¿Listo para transformar tu experiencia telefónica? Completa el formulario a continuación y te responderemos en 24 horas.",
+    "form": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo Electrónico",
+      "phone": "Número de Teléfono",
+      "company": "Nombre de la Empresa",
+      "industry": "Industria",
+      "message": "Cuéntanos sobre tus necesidades",
+      "placeholders": {
+        "firstName": "Ingresa tu nombre",
+        "lastName": "Ingresa tu apellido", 
+        "email": "Ingresa tu correo electrónico",
+        "phone": "Ingresa tu número de teléfono",
+        "company": "Ingresa el nombre de tu empresa",
+        "industry": "Selecciona tu industria",
+        "message": "Describe los desafíos actuales de tu sistema telefónico y lo que buscas lograr..."
+      },
+      "industries": {
+        "default": "Selecciona tu industria",
+        "healthcare": "Salud",
+        "realEstate": "Bienes Raíces",
+        "automotive": "Automotriz",
+        "professionalServices": "Servicios Profesionales",
+        "retail": "Retail",
+        "other": "Otro"
+      },
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "sent": "¡Enviado!",
+      "successTitle": "¡Mensaje Enviado Exitosamente! 🎉",
+      "successMessage": "¡Gracias por contactarnos! Te responderemos en 24 horas.",
+      "successNote": "Este mensaje desaparecerá automáticamente",
+      "guarantee": "Responderemos en 24 horas • Garantía de devolución de dinero de 30 días"
+    }
+  },
+  "footer": {
+    "description": "Transforma la experiencia telefónica de tu negocio con agentes de voz IA que trabajan 24/7, suenan completamente humanos y generan resultados reales.",
+    "location": "Barcelona, España",
+    "email": "taha@buildbeyondai.com",
+    "company": "Empresa",
+    "companyLinks": {
+      "aboutUs": "Acerca de Nosotros",
+      "caseStudies": "Casos de Estudio",
+      "security": "Seguridad",
+      "contact": "Contacto",
+      "bookDemo": "Reservar Demo"
+    },
+    "legalLinks": {
+      "privacyPolicy": "Política de Privacidad",
+      "termsOfService": "Términos de Servicio",
+      "cookiePolicy": "Política de Cookies",
+      "dpa": "DPA",
+      "sla": "SLA"
+    },
+    "copyright": "© 2025 Build Beyond. Todos los derechos reservados."
+  }
+}

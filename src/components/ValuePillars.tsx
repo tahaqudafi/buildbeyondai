@@ -1,12 +1,14 @@
 import { Clock, Phone, Zap, TrendingDown, TrendingUp, DollarSign } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const ValuePillars = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [cardsVisible, setCardsVisible] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const statsObserver = new IntersectionObserver(
@@ -51,35 +53,35 @@ const ValuePillars = () => {
     };
   }, []);
   const statsItems = [
-    { icon: Clock, label: "Response Time", value: "<2min", change: "vs 2h avg" },
-    { icon: TrendingUp, label: "Conversion Rate", value: "+25%", change: "increase" },
-    { icon: DollarSign, label: "Cost Savings", value: "35%", change: "vs human staff" },
+    { icon: Clock, label: t("valuePillars.stats.responseTime.label"), value: t("valuePillars.stats.responseTime.value"), change: t("valuePillars.stats.responseTime.change") },
+    { icon: TrendingUp, label: t("valuePillars.stats.conversionRate.label"), value: t("valuePillars.stats.conversionRate.value"), change: t("valuePillars.stats.conversionRate.change") },
+    { icon: DollarSign, label: t("valuePillars.stats.costSavings.label"), value: t("valuePillars.stats.costSavings.value"), change: t("valuePillars.stats.costSavings.change") },
   ];
 
   const pillars = [
     {
       icon: Clock,
-      title: "Always On",
-      description: "Never miss a lead again with 24/7 phone coverage that responds in under 2 minutes.",
-      features: ["Instant call pickup", "No hold times", "24/7 availability", "Holiday coverage"]
+      title: t("valuePillars.pillars.alwaysOn.title"),
+      description: t("valuePillars.pillars.alwaysOn.description"),
+      features: Array.isArray(t("valuePillars.pillars.alwaysOn.features")) ? t("valuePillars.pillars.alwaysOn.features") : []
     },
     {
       icon: TrendingDown,
-      title: "Lower Cost",
-      description: "Replace or augment call center teams while improving response time and consistency.",
-      features: ["30%-45% cost reduction", "No sick days", "Consistent quality", "Instant scaling"]
+      title: t("valuePillars.pillars.lowerCost.title"),
+      description: t("valuePillars.pillars.lowerCost.description"),
+      features: Array.isArray(t("valuePillars.pillars.lowerCost.features")) ? t("valuePillars.pillars.lowerCost.features") : []
     },
     {
       icon: Zap,
-      title: "Revenue-Ready",
-      description: "Qualifies leads, schedules appointments, updates CRM, and triggers automated workflows.",
-      features: ["Lead qualification", "Appointment booking", "CRM integration", "Workflow triggers"]
+      title: t("valuePillars.pillars.revenueReady.title"),
+      description: t("valuePillars.pillars.revenueReady.description"),
+      features: Array.isArray(t("valuePillars.pillars.revenueReady.features")) ? t("valuePillars.pillars.revenueReady.features") : []
     },
     {
       icon: Phone,
-      title: "Human-Level Voice",
-      description: "Natural conversation with memory, context, and emotional intelligence that customers trust.",
-      features: ["ElevenLabs TTS", "Context awareness", "Emotional responses", "Multiple languages"]
+      title: t("valuePillars.pillars.humanLevel.title"),
+      description: t("valuePillars.pillars.humanLevel.description"),
+      features: Array.isArray(t("valuePillars.pillars.humanLevel.features")) ? t("valuePillars.pillars.humanLevel.features") : []
     }
   ];
 
@@ -88,11 +90,10 @@ const ValuePillars = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-display font-lemonmilk mb-6">
-            Why Choose AI Voice Agents?
+            {t("valuePillars.title")}
           </h2>
           <p className="text-body-lg text-muted-foreground max-w-3xl mx-auto">
-            Transform your phone experience with AI that works around the clock,
-            sounds completely human, and drives real business results.
+            {t("valuePillars.subtitle")}
           </p>
         </div>
 

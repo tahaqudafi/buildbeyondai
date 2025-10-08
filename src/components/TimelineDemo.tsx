@@ -1,8 +1,10 @@
 import { Timeline } from "@/components/ui/timeline";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function TimelineDemo() {
+    const { t } = useLanguage();
     const data = [
         {
             title: "Week 1",
@@ -40,7 +42,7 @@ export function TimelineDemo() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: 0.3 }}
                                 >
-                                    Connect & Configure
+                                    {t("howItWorks.steps.week1.title")}
                                 </motion.h3>
                                 <motion.p 
                                     className="text-muted-foreground mb-6 leading-relaxed"
@@ -49,15 +51,10 @@ export function TimelineDemo() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: 0.4 }}
                                 >
-                                    Connect your phone number and CRM. We'll configure call flows, compliance settings, and voice preferences.
+                                    {t("howItWorks.steps.week1.description")}
                                 </motion.p>
                                 <ul className="space-y-2 text-sm text-left">
-                                    {[
-                                        "Phone number porting or forwarding",
-                                        "CRM integration (Google calendar, Slack, etc.)",
-                                        "Industry-specifics",
-                                        "Compliance & consent setup"
-                                    ].map((item, index) => (
+                                    {(Array.isArray(t("howItWorks.steps.week1.features")) ? t("howItWorks.steps.week1.features") : []).map((item: string, index: number) => (
                                         <motion.li 
                                             key={index}
                                             className="flex items-start"
@@ -117,7 +114,7 @@ export function TimelineDemo() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: 0.3 }}
                                 >
-                                    Customize & Train
+                                    {t("howItWorks.steps.week2.title")}
                                 </motion.h3>
                                 <motion.p 
                                     className="text-muted-foreground mb-6 leading-relaxed"
@@ -126,15 +123,10 @@ export function TimelineDemo() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: 0.4 }}
                                 >
-                                    Build custom conversation flows, train the AI with your FAQs, and fine-tune the voice to match your brand.
+                                    {t("howItWorks.steps.week2.description")}
                                 </motion.p>
                                 <ul className="space-y-2 text-sm text-left">
-                                    {[
-                                        "Conversation flow design",
-                                        "FAQ training & responses",
-                                        "Voice tone customization",
-                                        "Integration testing"
-                                    ].map((item, index) => (
+                                    {(Array.isArray(t("howItWorks.steps.week2.features")) ? t("howItWorks.steps.week2.features") : []).map((item: string, index: number) => (
                                         <motion.li 
                                             key={index}
                                             className="flex items-start"
@@ -194,7 +186,7 @@ export function TimelineDemo() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: 0.3 }}
                                 >
-                                    Go Live & Monitor
+                                    {t("howItWorks.steps.week3.title")}
                                 </motion.h3>
                                 <motion.p 
                                     className="text-muted-foreground mb-6 leading-relaxed"
@@ -203,15 +195,10 @@ export function TimelineDemo() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: 0.4 }}
                                 >
-                                    Launch your AI voice agent with real-time monitoring, analytics dashboard, and continuous optimization.
+                                    {t("howItWorks.steps.week3.description")}
                                 </motion.p>
                                 <ul className="space-y-2 text-sm text-left">
-                                    {[
-                                        "Soft launch with monitoring",
-                                        "Real-time analytics",
-                                        "Performance optimization",
-                                        "24/7 support & monitoring"
-                                    ].map((item, index) => (
+                                    {(Array.isArray(t("howItWorks.steps.week3.features")) ? t("howItWorks.steps.week3.features") : []).map((item: string, index: number) => (
                                         <motion.li 
                                             key={index}
                                             className="flex items-start"

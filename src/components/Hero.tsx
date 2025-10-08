@@ -2,8 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, ArrowRight, Phone, Clock, TrendingUp, DollarSign } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -27,9 +29,9 @@ const Hero = () => {
   ];
 
   const statsItems = [
-    { icon: Clock, label: "Response Time", value: "<2min", change: "vs 2h avg" },
-    { icon: TrendingUp, label: "Conversion Rate", value: "+25%", change: "increase" },
-    { icon: DollarSign, label: "Cost Savings", value: "60%", change: "vs human staff" },
+    { icon: Clock, label: t("hero.stats.responseTime.label"), value: t("hero.stats.responseTime.value"), change: t("hero.stats.responseTime.change") },
+    { icon: TrendingUp, label: t("hero.stats.conversionRate.label"), value: t("hero.stats.conversionRate.value"), change: t("hero.stats.conversionRate.change") },
+    { icon: DollarSign, label: t("hero.stats.costSavings.label"), value: t("hero.stats.costSavings.value"), change: t("hero.stats.costSavings.change") },
   ];
 
   return (
@@ -53,7 +55,7 @@ const Hero = () => {
           >
             <Badge className="inline-flex items-center px-4 py-2 mb-8 bg-primary/20 text-primary border-primary/30 hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer">
               <Phone className="h-4 w-4 mr-2" />
-              GDPR Ready • Enterprise Security • 24/7 Support
+              {t("hero.badge")}
             </Badge>
           </motion.div>
 
@@ -67,12 +69,8 @@ const Hero = () => {
               delay: 0.2,
               ease: [0.25, 0.46, 0.45, 0.94] 
             }}
-          >
-            AI Voice Agents that{" "}
-            <span className="gradient-text">Book More Appointments</span>
-            {" "}and{" "}
-            <span className="gradient-text">Close More Deals</span>
-          </motion.h1>
+            dangerouslySetInnerHTML={{ __html: t("hero.headline").replace(/Book More Appointments|Reservan mas Citas/g, '<span class="gradient-text">$&</span>').replace(/Close More Deals|Cierran mas Ventas/g, '<span class="gradient-text">$&</span>') }}
+          />
 
           {/* Subheadline */}
           <motion.p 
@@ -85,7 +83,7 @@ const Hero = () => {
               ease: [0.25, 0.46, 0.45, 0.94] 
             }}
           >
-            24/7 phone coverage with human-level voice, qualifying leads, handling calls, and syncing your CRM automatically.
+            {t("hero.subheadline")}
           </motion.p>
 
           {/* CTAs */}
@@ -108,7 +106,7 @@ const Hero = () => {
                 className="btn-hero text-lg px-8 py-4"
                 onClick={() => scrollToSection('get-started')}
               >
-                Book a Demo
+                {t("hero.bookDemo")}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
@@ -123,7 +121,7 @@ const Hero = () => {
                 onClick={() => scrollToSection('hear-it-in-action')}
               >
                 <Play className="mr-2 h-5 w-5" />
-                Hear a Live Sample
+                {t("hero.hearSample")}
               </Button>
             </motion.div>
           </motion.div>
@@ -149,7 +147,7 @@ const Hero = () => {
                 ease: [0.25, 0.46, 0.45, 0.94] 
               }}
             >
-              Powered by enterprise-grade technology
+              {t("hero.trustBar")}
             </motion.p>
             <motion.div 
               className="marquee-container"

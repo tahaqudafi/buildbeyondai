@@ -1,8 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TimelineDemo } from "./TimelineDemo";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const HowItWorks = () => {
+  const { t } = useLanguage();
   const steps = [
     {
       step: "01",
@@ -47,14 +49,13 @@ const HowItWorks = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Badge className="inline-flex items-center px-4 py-2 mb-6 bg-accent/20 text-accent border-accent/30 hover:text-white transition-colors duration-200">
-            Ready in under 3 Weeks
+            {t("howItWorks.badge")}
           </Badge>
           <h2 className="text-display font-lemonmilk mb-6">
-            How It Works
+            {t("howItWorks.title")}
           </h2>
           <p className="text-body-lg text-muted-foreground max-w-3xl mx-auto">
-            Get up and running with enterprise-grade AI voice agents in under 3 weeks.
-            Our proven implementation process ensures success from day one.
+            {t("howItWorks.subtitle")}
           </p>
         </div>
 

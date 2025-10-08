@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Play, Pause, Volume2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, useInView } from "framer-motion";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface AudioDemoProps {
   className?: string;
@@ -15,28 +16,29 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const { t } = useLanguage();
 
   const demoTabs = [
     {
       id: "receptionist",
-      name: "Receptionist",
-      description: "Answering calls, booking appointments, handling FAQs",
-      script: "Thanks for calling Metro Dental. I can book you in today - may I have your name and preferred time? We accept most insurance plans including BlueCross. I have Tuesday 10:30 or Wednesday 4:00 PM available. What works best for you?",
-      duration: "0:32"
+      name: t("audioDemo.tabs.receptionist.name"),
+      description: t("audioDemo.tabs.receptionist.description"),
+      script: t("audioDemo.tabs.receptionist.script"),
+      duration: t("audioDemo.tabs.receptionist.duration")
     },
     {
       id: "outbound",
-      name: "Outbound Sales", 
-      description: "Following up on leads, qualifying prospects",
-      script: "Hi Sarah, this is the booking line for Home Pro Services. You requested a quote for kitchen renovation yesterday. I can schedule our designer to visit this week - would morning or afternoon work better for you?",
-      duration: "0:28"
+      name: t("audioDemo.tabs.outbound.name"), 
+      description: t("audioDemo.tabs.outbound.description"),
+      script: t("audioDemo.tabs.outbound.script"),
+      duration: t("audioDemo.tabs.outbound.duration")
     },
     {
       id: "reminder",
-      name: "Appointment Reminder",
-      description: "Confirming appointments, reducing no-shows",
-      script: "Hi Mr. Johnson, reminding you of your appointment tomorrow at 2 PM with Dr. Smith. Press 1 to confirm, 2 to reschedule - I can handle that right now. Otherwise, we'll see you tomorrow!",
-      duration: "0:25"
+      name: t("audioDemo.tabs.reminder.name"),
+      description: t("audioDemo.tabs.reminder.description"),
+      script: t("audioDemo.tabs.reminder.script"),
+      duration: t("audioDemo.tabs.reminder.duration")
     }
   ];
 
@@ -67,7 +69,7 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
             ease: [0.25, 0.46, 0.45, 0.94] 
           }}
         >
-          Hear It In Action
+          {t("audioDemo.title")}
         </motion.h3>
         <motion.p 
           className="text-body text-muted-foreground max-w-2xl mx-auto"
@@ -79,7 +81,7 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
             ease: [0.25, 0.46, 0.45, 0.94] 
           }}
         >
-          Listen to real conversations powered by our AI voice agents. Each agent is customized for your industry and use case.
+          {t("audioDemo.subtitle")}
         </motion.p>
       </div>
 
@@ -236,7 +238,7 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
               transition={{ duration: 0.3, delay: 0.3 }}
             >
               <div className="w-2 h-2 bg-gradient-to-r from-accent to-primary rounded-full mr-2 animate-pulse shadow-sm"></div>
-              <span className="text-sm font-medium text-foreground">Live Transcript:</span>
+              <span className="text-sm font-medium text-foreground">{t("audioDemo.liveTranscript")}</span>
             </motion.div>
             <motion.p 
               className="text-body leading-relaxed italic text-foreground/90"
