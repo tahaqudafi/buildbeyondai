@@ -26,7 +26,7 @@ const GetStarted = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 border border-primary/20 max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h3 className="text-display mb-4">Get Started Today</h3>
+            <h3 className="text-display font-lemonmilk mb-4">Get Started Today</h3>
             <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
               Ready to transform your phone experience? Fill out the form below and we'll get back to you within 24 hours.
             </p>

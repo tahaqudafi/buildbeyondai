@@ -59,7 +59,7 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
     <div ref={sectionRef} className={cn("w-full", className)}>
       <div className="text-center mb-8">
         <motion.h3 
-          className="text-display mb-4"
+          className="text-display font-lemonmilk mb-4"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ 
@@ -142,7 +142,7 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <h4 className="text-xl font-semibold mb-2">{activeDemo?.name} Demo</h4>
+            <h4 className="text-xl font-lemonmilk font-semibold mb-2">{activeDemo?.name} Demo</h4>
             <p className="text-muted-foreground">{activeDemo?.description}</p>
           </motion.div>
 

@@ -34,7 +34,7 @@ export function TimelineDemo() {
                                 </motion.div>
 
                                 <motion.h3 
-                                    className="text-xl font-semibold mb-4"
+                                    className="text-xl font-lemonmilk font-semibold mb-4"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
@@ -111,7 +111,7 @@ export function TimelineDemo() {
                                 </motion.div>
 
                                 <motion.h3 
-                                    className="text-xl font-semibold mb-4"
+                                    className="text-xl font-lemonmilk font-semibold mb-4"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
@@ -188,7 +188,7 @@ export function TimelineDemo() {
                                 </motion.div>
 
                                 <motion.h3 
-                                    className="text-xl font-semibold mb-4"
+                                    className="text-xl font-lemonmilk font-semibold mb-4"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}

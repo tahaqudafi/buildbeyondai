@@ -86,7 +86,7 @@ const Footer = () => {
 
           {/* Company Links - Horizontal */}
           <div className="text-center lg:text-left">
-            <h3 className="font-semibold mb-4">Company</h3>
+            <h3 className="font-lemonmilk font-semibold mb-4">Company</h3>
             <div className="flex flex-wrap justify-center lg:justify-start gap-6">
               {companyLinks.map((link, index) => (
                 <a

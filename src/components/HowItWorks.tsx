@@ -49,7 +49,7 @@ const HowItWorks = () => {
           <Badge className="inline-flex items-center px-4 py-2 mb-6 bg-accent/20 text-accent border-accent/30 hover:text-white transition-colors duration-200">
             Ready in under 3 Weeks
           </Badge>
-          <h2 className="text-display mb-6">
+          <h2 className="text-display font-lemonmilk mb-6">
             How It Works
           </h2>
           <p className="text-body-lg text-muted-foreground max-w-3xl mx-auto">

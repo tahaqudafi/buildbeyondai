@@ -3,6 +3,15 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/* Custom Font - LEMONMILK */
+@font-face {
+  font-family: 'LEMONMILK';
+  src: url('/fonts/LEMONMILK-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* AI Voice Agents B2B Design System */
 
 @layer base {
@@ -100,15 +109,18 @@
 
   /* Typography Scale */
   .text-hero {
-    @apply text-5xl font-bold leading-tight tracking-tight lg:text-6xl xl:text-7xl;
+    @apply text-4xl font-bold leading-tight tracking-tight lg:text-5xl xl:text-6xl;
+    font-family: 'LEMONMILK', 'Inter', system-ui, -apple-system, sans-serif;
   }
 
   .text-display {
     @apply text-4xl font-bold leading-tight tracking-tight lg:text-5xl;
+    font-family: 'LEMONMILK', 'Inter', system-ui, -apple-system, sans-serif;
   }
 
   .text-heading {
     @apply text-3xl font-semibold leading-tight tracking-tight lg:text-4xl;
+    font-family: 'LEMONMILK', 'Inter', system-ui, -apple-system, sans-serif;
   }
 
   .text-subheading {
@@ -292,43 +304,51 @@
 
 /* Mobile Background Optimizations - Replace blur with static gradients */
 @media (max-width: 768px) {
+
   /* Replace blur-3xl with static gradient backgrounds on mobile */
   .blur-3xl {
     filter: none !important;
     background: linear-gradient(135deg, hsl(var(--primary) / 0.08) 0%, hsl(var(--primary) / 0.03) 100%) !important;
   }
-  
+
   /* Replace blur-xl with lighter static gradient */
   .blur-xl {
     filter: none !important;
     background: linear-gradient(135deg, hsl(var(--accent) / 0.06) 0%, hsl(var(--accent) / 0.02) 100%) !important;
   }
-  
+
   /* Make badge even smaller on mobile */
   .inline-flex.items-center.px-4.py-2 {
-    padding: 0.25rem 0.5rem !important; /* py-1 px-2 equivalent */
-    font-size: 0.625rem !important; /* text-xs smaller */
+    padding: 0.25rem 0.5rem !important;
+    /* py-1 px-2 equivalent */
+    font-size: 0.625rem !important;
+    /* text-xs smaller */
   }
-  
+
   /* Make badge icon even smaller on mobile */
   .inline-flex.items-center.px-4.py-2 .h-4.w-4 {
-    height: 0.625rem !important; /* smaller than h-3 */
-    width: 0.625rem !important;  /* smaller than w-3 */
+    height: 0.625rem !important;
+    /* smaller than h-3 */
+    width: 0.625rem !important;
+    /* smaller than w-3 */
   }
-  
+
   /* Make Hero section fonts smaller on mobile */
   .text-hero {
-    font-size: 2.5rem !important; /* text-4xl instead of text-5xl+ */
+    font-size: 2.5rem !important;
+    /* text-4xl instead of text-5xl+ */
     line-height: 1.1 !important;
   }
-  
+
   .text-subheading {
-    font-size: 1rem !important; /* text-base instead of text-lg */
+    font-size: 1rem !important;
+    /* text-base instead of text-lg */
     line-height: 1.5 !important;
   }
-  
+
   .text-body-lg {
-    font-size: 0.875rem !important; /* text-sm instead of text-lg */
+    font-size: 0.875rem !important;
+    /* text-sm instead of text-lg */
     line-height: 1.4 !important;
   }
 }

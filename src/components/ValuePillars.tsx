@@ -87,7 +87,7 @@ const ValuePillars = () => {
     <section className="py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <h2 className="text-display mb-6">
+          <h2 className="text-display font-lemonmilk mb-6">
             Why Choose AI Voice Agents?
           </h2>
           <p className="text-body-lg text-muted-foreground max-w-3xl mx-auto">
@@ -135,7 +135,7 @@ const ValuePillars = () => {
                   <pillar.icon className="h-8 w-8 text-primary" />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3">{pillar.title}</h3>
+                <h3 className="text-xl font-lemonmilk font-semibold mb-3">{pillar.title}</h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   {pillar.description}
                 </p>

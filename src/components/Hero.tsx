@@ -59,7 +59,7 @@ const Hero = () => {
 
           {/* Main Headline */}
           <motion.h1 
-            className="text-hero mb-6 max-w-4xl mx-auto"
+            className="text-hero font-lemonmilk mb-6 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ 
