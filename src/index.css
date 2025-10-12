@@ -275,6 +275,30 @@
   width: 100%;
 }
 
+/* Fade effect on edges for desktop only */
+@media (min-width: 768px) {
+  .marquee-container::before,
+  .marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, hsl(var(--background)) 0%, transparent 100%);
+  }
+
+  .marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, hsl(var(--background)) 0%, transparent 100%);
+  }
+}
+
 .marquee-content {
   display: flex;
   animation: marquee 25s linear infinite;
