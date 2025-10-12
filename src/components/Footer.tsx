@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Linkedin, Twitter, Youtube } from "lucide-react";
+import { Phone, Mail, MapPin, Linkedin } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const Footer = () => {
@@ -18,24 +18,17 @@ const Footer = () => {
 
   const companyLinks = [
     { name: t("footer.companyLinks.aboutUs"), href: "/about" },
-    { name: t("footer.companyLinks.caseStudies"), href: "/case-studies" },
-    { name: t("footer.companyLinks.security"), href: "/security" },
-    { name: t("footer.companyLinks.contact"), href: "#", onClick: (e: React.MouseEvent) => { e.preventDefault(); scrollToSection('get-started'); } },
-    { name: t("footer.companyLinks.bookDemo"), href: "#", onClick: (e: React.MouseEvent) => { e.preventDefault(); scrollToSection('get-started'); } }
+    { name: t("footer.companyLinks.contact"), href: "#", onClick: (e: React.MouseEvent) => { e.preventDefault(); scrollToSection('get-started'); } }
   ];
 
   const legalLinks = [
     { name: t("footer.legalLinks.privacyPolicy"), href: "/legal/privacy" },
     { name: t("footer.legalLinks.termsOfService"), href: "/legal/terms" },
-    { name: t("footer.legalLinks.cookiePolicy"), href: "/legal/cookies" },
-    { name: t("footer.legalLinks.dpa"), href: "/legal/dpa" },
-    { name: t("footer.legalLinks.sla"), href: "/legal/sla" }
+    { name: t("footer.legalLinks.cookiePolicy"), href: "/legal/cookies" }
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Youtube, href: "#", label: "YouTube" }
+    { icon: Linkedin, href: "https://www.linkedin.com/in/taha-al-qudafi-4a37511b8", label: "LinkedIn" }
   ];
 
   return (
@@ -76,6 +69,8 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center w-10 h-10 bg-secondary/50 hover:bg-secondary rounded-lg transition-colors"
                   aria-label={social.label}
                 >
