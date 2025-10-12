@@ -91,15 +91,15 @@ const AboutUs = () => {
 
                         {/* Stats */}
                         <motion.div
-                            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto"
+                            className="grid grid-cols-3 gap-4 sm:gap-8 max-w-3xl mx-auto"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.6 }}
                         >
                             {stats.map((stat, index) => (
                                 <div key={index} className="text-center">
-                                    <div className="text-3xl font-lemonmilk font-bold text-primary mb-2">{stat.number}</div>
-                                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                                    <div className="text-xl sm:text-2xl lg:text-3xl font-lemonmilk font-bold text-primary mb-1 sm:mb-2">{stat.number}</div>
+                                    <div className="text-xs sm:text-sm text-muted-foreground leading-tight">{stat.label}</div>
                                 </div>
                             ))}
                         </motion.div>
