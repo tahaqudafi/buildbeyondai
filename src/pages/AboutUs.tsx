@@ -14,14 +14,14 @@ const AboutUs = () => {
         {
             name: t("aboutUs.team.taha.name"),
             role: t("aboutUs.team.taha.role"),
-            image: "/images/team/taha.jpg",
+            image: "/images/taha.jpg",
             linkedin: "https://www.linkedin.com/in/taha-al-qudafi-4a37511b8",
             description: t("aboutUs.team.taha.description")
         },
         {
             name: t("aboutUs.team.irini.name"),
             role: t("aboutUs.team.irini.role"),
-            image: "/images/team/irini.jpg",
+            image: "/images/irini.png",
             linkedin: "https://www.linkedin.com/in/irini-anastasiadou-b5394968?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
             description: t("aboutUs.team.irini.description")
         }
@@ -264,8 +264,12 @@ const AboutUs = () => {
                                 viewport={{ once: true }}
                             >
                                 <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300 h-full">
-                                    <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <Users className="w-12 h-12 text-primary" />
+                                    <div className="w-24 h-24 mx-auto mb-4 overflow-hidden rounded-full">
+                                        <img 
+                                            src={member.image} 
+                                            alt={member.name}
+                                            className="w-full h-full object-cover"
+                                        />
                                     </div>
                                     <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
                                     <p className="text-primary font-medium mb-3">{member.role}</p>
