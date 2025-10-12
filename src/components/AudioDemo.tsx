@@ -157,7 +157,7 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
         }}
         whileHover={{ y: -5 }}
       >
-        <Card className="card-elevated max-w-4xl mx-auto bg-gradient-to-br from-background to-secondary/20 border border-primary/20 shadow-xl">
+        <Card className="card-elevated max-w-4xl mx-auto bg-gradient-to-br from-background to-secondary/20 border border-primary/20 shadow-xl p-4 md:p-6">
           <motion.div
             className="text-center mb-6"
             key={activeTab} // Re-animate when tab changes
@@ -171,13 +171,71 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
 
           {/* Audio Player */}
           <motion.div
-            className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-6 mb-6 border border-primary/20"
+            className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-4 md:p-6 mb-6 border border-primary/20"
             key={`${activeTab}-player`}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.1 }}
           >
-            <div className="flex items-center justify-center space-x-6 mb-4">
+            {/* Mobile Layout */}
+            <div className="block md:hidden space-y-4 mb-4">
+              {/* Play Button - Centered */}
+              <div className="flex justify-center">
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Button
+                    onClick={togglePlay}
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground w-16 h-16 rounded-full p-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <motion.div
+                      key={isPlaying ? 'pause' : 'play'}
+                      initial={{ scale: 0, rotate: -90 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6 ml-1" />}
+                    </motion.div>
+                  </Button>
+                </motion.div>
+              </div>
+
+              {/* Volume Control - Full Width */}
+              <motion.div
+                className="flex items-center space-x-3 w-full"
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
+              >
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={toggleMute}
+                  className="p-2 hover:bg-primary/10 flex-shrink-0"
+                >
+                  {isMuted ? (
+                    <VolumeX className="h-4 w-4 text-muted-foreground" />
+                  ) : (
+                    <Volume2 className="h-4 w-4 text-accent" />
+                  )}
+                </Button>
+                <Slider
+                  value={volume}
+                  onValueChange={handleVolumeChange}
+                  max={1}
+                  step={0.1}
+                  className="flex-1"
+                />
+                <span className="text-sm font-medium text-muted-foreground flex-shrink-0">
+                  {activeDemo?.duration}
+                </span>
+              </motion.div>
+            </div>
+
+            {/* Desktop Layout */}
+            <div className="hidden md:flex items-center justify-center space-x-6 mb-4">
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -232,7 +290,7 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
 
             {/* Waveform Placeholder */}
             <motion.div
-              className="flex items-center justify-center space-x-1 h-12 mb-4"
+              className="flex items-center justify-center space-x-1 h-12 mb-4 overflow-hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -241,8 +299,9 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
                 <motion.div
                   key={i}
                   className={cn(
-                    "w-1 bg-gradient-to-t from-primary/40 to-accent/40 rounded-full transition-all duration-300",
+                    "w-0.5 md:w-1 bg-gradient-to-t from-primary/40 to-accent/40 rounded-full transition-all duration-300",
                     isPlaying && i < 20 ? "bg-gradient-to-t from-primary to-accent animate-pulse shadow-sm" : "",
+                    i > 25 ? "hidden md:block" : ""
                   )}
                   style={{
                     height: `${Math.random() * 32 + 8}px`,

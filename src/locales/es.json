@@ -97,17 +97,17 @@
       "receptionist": {
         "name": "Recepcionista",
         "description": "Respondiendo llamadas, reservando citas, manejando preguntas frecuentes",
-        "script": "Gracias por llamar a Metro Dental. Puedo reservarte una cita hoy - ¿puedo tener tu nombre y hora preferida? Aceptamos la mayoría de planes de seguro incluyendo BlueCross. Tengo disponible martes 10:30 o miércoles 4:00 PM. ¿Qué te funciona mejor?",
-        "duration": "0:32"
+        "script": "El agente ayudó al usuario a reservar una cita dental. Después de que el horario solicitado de las 5:00 PM no estuviera disponible, se ofrecieron tres horarios alternativos; el usuario seleccionó las 6:00 PM del 11 de octubre. El agente confirmó la ortografía del nombre y correo electrónico, luego reservó la cita para las 6:00–6:30 PM del 11 de octubre de 2025 y confirmó la reserva.",
+        "duration": "2:10"
       },
       "outbound": {
         "name": "Ventas Salientes",
         "description": "Siguiendo leads, calificando prospectos", 
-        "script": "Hola Sarah, esta es la línea de reservas de Home Pro Services. Solicitaste una cotización para renovación de cocina ayer. Puedo programar que nuestro diseñador te visite esta semana - ¿te funciona mejor por la mañana o tarde?",
-        "duration": "0:28"
+        "script": "La llamada fue sobre programar un tour de propiedad para Taha en 524 Retell Lane en Palo Alto. Taha expresó interés en la propiedad pero mencionó que el patio trasero era más pequeño de lo deseado. El agente programó exitosamente un tour para el lunes 13 de octubre a las 5 PM y acordó enviar a Taha información sobre escuelas cercanas y tiendas de conveniencia por correo electrónico.",
+        "duration": "3:20"
       }
     },
-    "liveTranscript": "Transcripción en Vivo:"
+    "liveTranscript": "Resumen:"
   },
   "howItWorks": {
     "badge": "Listo en menos de 3 Semanas",

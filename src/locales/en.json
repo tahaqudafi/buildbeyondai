@@ -97,17 +97,17 @@
             "receptionist": {
                 "name": "Receptionist",
                 "description": "Answering calls, booking appointments, handling FAQs",
-                "script": "Thanks for calling Metro Dental. I can book you in today - may I have your name and preferred time? We accept most insurance plans including BlueCross. I have Tuesday 10:30 or Wednesday 4:00 PM available. What works best for you?",
-                "duration": "0:32"
+                "script": "The agent helped the user book a dental appointment. After the requested 5:00 PM slot was unavailable, three alternative times were offered; the user selected 6:00 PM on October 11. The agent confirmed the name and email spelling, then booked the appointment for 6:00–6:30 PM on October 11, 2025 and confirmed the booking.",
+                "duration": "2:10"
             },
             "outbound": {
                 "name": "Outbound Sales",
                 "description": "Following up on leads, qualifying prospects",
-                "script": "Hi Sarah, this is the booking line for Home Pro Services. You requested a quote for kitchen renovation yesterday. I can schedule our designer to visit this week - would morning or afternoon work better for you?",
-                "duration": "0:28"
+                "script": "The call was about scheduling a property tour for Taha at 524 Retell Lane in Palo Alto. Taha expressed interest in the property but mentioned the backyard was smaller than desired. The agent successfully scheduled a tour for Monday, October 13th at 5 PM and agreed to send Taha information about nearby schools and convenience stores via email.",
+                "duration": "3:20"
             }
         },
-        "liveTranscript": "Live Transcript:"
+        "liveTranscript": "Summary:"
     },
     "howItWorks": {
         "badge": "Ready in under 3 Weeks",

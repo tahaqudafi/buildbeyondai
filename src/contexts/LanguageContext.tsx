@@ -27,7 +27,7 @@ const translations = {
           "change": "vs 2h avg"
         },
         "conversionRate": {
-          "label": "Conversion Rate", 
+          "label": "Conversion Rate",
           "value": "+25%",
           "change": "increase"
         },
@@ -64,7 +64,7 @@ const translations = {
           "description": "Never miss a lead again with 24/7 phone coverage that responds in under 2 minutes.",
           "features": [
             "Instant call pickup",
-            "No hold times", 
+            "No hold times",
             "24/7 availability",
             "Holiday coverage"
           ]
@@ -108,14 +108,14 @@ const translations = {
         "receptionist": {
           "name": "Receptionist",
           "description": "Answering calls, booking appointments, handling FAQs",
-          "script": "Thanks for calling Metro Dental. I can book you in today - may I have your name and preferred time? We accept most insurance plans including BlueCross. I have Tuesday 10:30 or Wednesday 4:00 PM available. What works best for you?",
-          "duration": "0:32"
+          "script": "The agent helped the user book a dental appointment. After the requested 5:00 PM slot was unavailable, three alternative times were offered; the user selected 6:00 PM on October 11. The agent confirmed the name and email spelling, then booked the appointment for 6:00–6:30 PM on October 11, 2025 and confirmed the booking.",
+          "duration": "2:10"
         },
         "outbound": {
           "name": "Outbound Sales",
-          "description": "Following up on leads, qualifying prospects", 
-          "script": "Hi Sarah, this is the booking line for Home Pro Services. You requested a quote for kitchen renovation yesterday. I can schedule our designer to visit this week - would morning or afternoon work better for you?",
-          "duration": "0:28"
+          "description": "Following up on leads, qualifying prospects",
+          "script": "The call was about scheduling a property tour for Taha at 524 Retell Lane in Palo Alto. Taha expressed interest in the property but mentioned the backyard was smaller than desired. The agent successfully scheduled a tour for Monday, October 13th at 5 PM and agreed to send Taha information about nearby schools and convenience stores via email.",
+          "duration": "3:20"
         },
         "reminder": {
           "name": "Appointment Reminder",
@@ -124,7 +124,7 @@ const translations = {
           "duration": "0:25"
         }
       },
-      "liveTranscript": "Live Transcript:"
+      "liveTranscript": "Summary:"
     },
     "howItWorks": {
       "badge": "Ready in under 3 Weeks",
@@ -142,7 +142,7 @@ const translations = {
           ]
         },
         "week2": {
-          "title": "Customize & Train", 
+          "title": "Customize & Train",
           "description": "Build custom conversation flows, train the AI with your FAQs, and fine-tune the voice to match your brand.",
           "features": [
             "Conversation flow design",
@@ -156,7 +156,7 @@ const translations = {
           "description": "Launch your AI voice agent with real-time monitoring, analytics dashboard, and continuous optimization.",
           "features": [
             "Soft launch with monitoring",
-            "Real-time analytics", 
+            "Real-time analytics",
             "Performance optimization",
             "24/7 support & monitoring"
           ]
@@ -176,7 +176,7 @@ const translations = {
         "message": "Tell us about your needs",
         "placeholders": {
           "firstName": "Enter your first name",
-          "lastName": "Enter your last name", 
+          "lastName": "Enter your last name",
           "email": "Enter your email",
           "phone": "Enter your phone number",
           "company": "Enter your company name",
@@ -241,7 +241,7 @@ const translations = {
           "change": "vs 2h promedio"
         },
         "conversionRate": {
-          "label": "Tasa de Conversión", 
+          "label": "Tasa de Conversión",
           "value": "+25%",
           "change": "aumento"
         },
@@ -278,7 +278,7 @@ const translations = {
           "description": "Nunca pierdas un lead con cobertura telefónica 24/7 que responde en menos de 2 minutos.",
           "features": [
             "Respuesta instantánea",
-            "Sin tiempos de espera", 
+            "Sin tiempos de espera",
             "Disponibilidad 24/7",
             "Cobertura en feriados"
           ]
@@ -322,14 +322,14 @@ const translations = {
         "receptionist": {
           "name": "Recepcionista",
           "description": "Respondiendo llamadas, reservando citas, manejando preguntas frecuentes",
-          "script": "Gracias por llamar a Metro Dental. Puedo reservarte una cita hoy - ¿puedo tener tu nombre y hora preferida? Aceptamos la mayoría de planes de seguro incluyendo BlueCross. Tengo disponible martes 10:30 o miércoles 4:00 PM. ¿Qué te funciona mejor?",
-          "duration": "0:32"
+          "script": "El agente ayudó al usuario a reservar una cita dental. Después de que el horario solicitado de las 5:00 PM no estuviera disponible, se ofrecieron tres horarios alternativos; el usuario seleccionó las 6:00 PM del 11 de octubre. El agente confirmó la ortografía del nombre y correo electrónico, luego reservó la cita para las 6:00–6:30 PM del 11 de octubre de 2025 y confirmó la reserva.",
+          "duration": "2:10"
         },
         "outbound": {
           "name": "Ventas Salientes",
-          "description": "Siguiendo leads, calificando prospectos", 
-          "script": "Hola Sarah, esta es la línea de reservas de Home Pro Services. Solicitaste una cotización para renovación de cocina ayer. Puedo programar que nuestro diseñador te visite esta semana - ¿te funciona mejor por la mañana o tarde?",
-          "duration": "0:28"
+          "description": "Siguiendo leads, calificando prospectos",
+          "script": "La llamada fue sobre programar un tour de propiedad para Taha en 524 Retell Lane en Palo Alto. Taha expresó interés en la propiedad pero mencionó que el patio trasero era más pequeño de lo deseado. El agente programó exitosamente un tour para el lunes 13 de octubre a las 5 PM y acordó enviar a Taha información sobre escuelas cercanas y tiendas de conveniencia por correo electrónico.",
+          "duration": "3:20"
         },
         "reminder": {
           "name": "Recordatorio de Cita",
@@ -338,7 +338,7 @@ const translations = {
           "duration": "0:25"
         }
       },
-      "liveTranscript": "Transcripción en Vivo:"
+      "liveTranscript": "Resumen:"
     },
     "howItWorks": {
       "badge": "Listo en menos de 3 Semanas",
@@ -356,7 +356,7 @@ const translations = {
           ]
         },
         "week2": {
-          "title": "Personalizar y Entrenar", 
+          "title": "Personalizar y Entrenar",
           "description": "Construye flujos de conversación personalizados, entrena la IA con tus preguntas frecuentes y ajusta la voz para que coincida con tu marca.",
           "features": [
             "Diseño de flujo de conversación",
@@ -370,7 +370,7 @@ const translations = {
           "description": "Lanza tu agente de voz IA con monitoreo en tiempo real, panel de análisis y optimización continua.",
           "features": [
             "Lanzamiento suave con monitoreo",
-            "Análisis en tiempo real", 
+            "Análisis en tiempo real",
             "Optimización de rendimiento",
             "Soporte y monitoreo 24/7"
           ]
@@ -390,7 +390,7 @@ const translations = {
         "message": "Cuéntanos sobre tus necesidades",
         "placeholders": {
           "firstName": "Ingresa tu nombre",
-          "lastName": "Ingresa tu apellido", 
+          "lastName": "Ingresa tu apellido",
           "email": "Ingresa tu correo electrónico",
           "phone": "Ingresa tu número de teléfono",
           "company": "Ingresa el nombre de tu empresa",
@@ -447,11 +447,11 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   const t = (key: string): any => {
     const keys = key.split('.');
     let value: any = translations[language];
-    
+
     for (const k of keys) {
       value = value?.[k];
     }
-    
+
     return value || key;
   };
 
