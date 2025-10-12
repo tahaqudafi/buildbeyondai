@@ -11,7 +11,7 @@ const Hero = () => {
     if (element) {
       const elementPosition = element.offsetTop;
       const offsetPosition = elementPosition - 100; // Scroll 100px higher than the element
-      
+
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
@@ -47,10 +47,10 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.6, 
+            transition={{
+              duration: 0.6,
               delay: 0,
-              ease: [0.25, 0.46, 0.45, 0.94] 
+              ease: [0.25, 0.46, 0.45, 0.94]
             }}
           >
             <Badge className="inline-flex items-center px-4 py-2 mb-8 bg-primary/20 text-primary border-primary/30 hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer">
@@ -60,41 +60,41 @@ const Hero = () => {
           </motion.div>
 
           {/* Main Headline */}
-          <motion.h1 
+          <motion.h1
             className="text-hero font-lemonmilk mb-6 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.8, 
+            transition={{
+              duration: 0.8,
               delay: 0.2,
-              ease: [0.25, 0.46, 0.45, 0.94] 
+              ease: [0.25, 0.46, 0.45, 0.94]
             }}
             dangerouslySetInnerHTML={{ __html: t("hero.headline").replace(/Book More Appointments|Reservan mas Citas/g, '<span class="gradient-text">$&</span>').replace(/Close More Deals|Cierran mas Ventas/g, '<span class="gradient-text">$&</span>') }}
           />
 
           {/* Subheadline */}
-          <motion.p 
+          <motion.p
             className="text-subheading text-muted-foreground max-w-3xl mx-auto mb-10"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.8, 
+            transition={{
+              duration: 0.8,
               delay: 0.4,
-              ease: [0.25, 0.46, 0.45, 0.94] 
+              ease: [0.25, 0.46, 0.45, 0.94]
             }}
           >
             {t("hero.subheadline")}
           </motion.p>
 
           {/* CTAs */}
-          <motion.div 
+          <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.8, 
+            transition={{
+              duration: 0.8,
               delay: 0.6,
-              ease: [0.25, 0.46, 0.45, 0.94] 
+              ease: [0.25, 0.46, 0.45, 0.94]
             }}
           >
             <motion.div
@@ -131,32 +131,32 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.8, 
+            transition={{
+              duration: 0.8,
               delay: 0.8,
-              ease: [0.25, 0.46, 0.45, 0.94] 
+              ease: [0.25, 0.46, 0.45, 0.94]
             }}
           >
-            <motion.p 
+            <motion.p
               className="text-sm text-muted-foreground mb-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ 
-                duration: 0.6, 
+              transition={{
+                duration: 0.6,
                 delay: 1.0,
-                ease: [0.25, 0.46, 0.45, 0.94] 
+                ease: [0.25, 0.46, 0.45, 0.94]
               }}
             >
               {t("hero.trustBar")}
             </motion.p>
-            <motion.div 
+            <motion.div
               className="marquee-container"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 delay: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94] 
+                ease: [0.25, 0.46, 0.45, 0.94]
               }}
             >
               <div className="marquee-content">
