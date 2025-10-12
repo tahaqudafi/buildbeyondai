@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Users, Target, Lightbulb, Award, ArrowRight, MapPin, Mail, ExternalLink } from "lucide-react";
+import { Users, Target, Lightbulb, Award, ArrowRight, MapPin, Mail, ExternalLink, Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const AboutUs = () => {
@@ -22,7 +22,7 @@ const AboutUs = () => {
             name: t("aboutUs.team.irini.name"),
             role: t("aboutUs.team.irini.role"),
             image: "/images/team/irini.jpg",
-            linkedin: "https://www.linkedin.com/in/irini-anastasiadou-b53949683",
+            linkedin: "https://www.linkedin.com/in/irini-anastasiadou-b5394968?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
             description: t("aboutUs.team.irini.description")
         }
     ];
@@ -69,16 +69,7 @@ const AboutUs = () => {
 
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                        >
-                            <Badge className="inline-flex items-center px-4 py-2 mb-8 bg-primary/20 text-primary border-primary/30 hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer">
-                                <Users className="h-4 w-4 mr-2" />
-                                {t("aboutUs.badge")}
-                            </Badge>
-                        </motion.div>
+
 
                         <motion.h1
                             className="text-hero font-lemonmilk mb-6 max-w-4xl mx-auto"
@@ -285,7 +276,7 @@ const AboutUs = () => {
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
                                     >
-                                        <ExternalLink className="w-4 h-4 mr-2" />
+                                        <Linkedin className="w-4 h-4 mr-2" />
                                         {t("aboutUs.team.linkedinText")}
                                     </a>
                                 </Card>

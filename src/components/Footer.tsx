@@ -28,8 +28,7 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: "https://www.linkedin.com/company/build-beyond-ai/", label: "Build Beyond AI LinkedIn" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/taha-al-qudafi-4a37511b8", label: "Taha's LinkedIn" }
+    { icon: Linkedin, href: "https://www.linkedin.com/company/build-beyond-ai/", label: "Build Beyond AI LinkedIn" }
   ];
 
   return (

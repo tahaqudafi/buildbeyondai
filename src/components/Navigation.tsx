@@ -36,13 +36,13 @@ const Navigation = () => {
         <div className="flex justify-between lg:justify-between items-center h-16 relative">
           {/* Logo - Centered on mobile, left-aligned on desktop */}
           <div className="flex-shrink-0 lg:flex-shrink-0 absolute left-1/2 transform -translate-x-1/2 lg:relative lg:left-auto lg:transform-none">
-            <div className="flex items-center">
+            <a href="/" className="flex items-center">
               <img
                 src="/images/logo2.svg"
                 alt="Vocalytics Logo"
                 className="h-12 w-auto"
               />
-            </div>
+            </a>
           </div>
 
           {/* Desktop Navigation */}

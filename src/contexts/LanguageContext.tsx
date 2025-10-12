@@ -202,8 +202,7 @@ const translations = {
       }
     },
     "aboutUs": {
-      "badge": "About Build Beyond AI",
-      "title": "Transforming Business Communications with AI Voice Technology",
+      "title": "About Build Beyond AI",
       "subtitle": "Born from a frustrating 30-minute hold with Amazon, we're building AI voice agents that ensure no one has to wait again. Fast, human-sounding support that works alongside your team, not against it.",
       "stats": {
         "uptime": "24/7",
@@ -503,8 +502,7 @@ const translations = {
       }
     },
     "aboutUs": {
-      "badge": "Acerca de Build Beyond AI",
-      "title": "Transformando las Comunicaciones Empresariales con Tecnología de Voz IA",
+      "title": "Acerca de Build Beyond AI",
       "subtitle": "Nacido de una frustrante espera de 30 minutos con Amazon, estamos construyendo agentes de voz IA que aseguran que nadie tenga que esperar de nuevo. Soporte rápido y de sonido humano que trabaja junto a tu equipo, no en su contra.",
       "stats": {
         "uptime": "24/7",
