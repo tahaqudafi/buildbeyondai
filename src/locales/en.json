@@ -1,23 +1,208 @@
 {
-  "footer": {
-    "description": "Transform your business phone experience with AI voice agents that work 24/7, sound completely human, and drive real results.",
-    "location": "Barcelona, Spain",
-    "email": "taha@buildbeyondai.com",
-    "company": "Company",
-    "companyLinks": {
-      "aboutUs": "About Us",
-      "caseStudies": "Case Studies",
-      "security": "Security",
-      "contact": "Contact",
-      "bookDemo": "Book Demo"
+    "navigation": {
+        "contact": "Contact"
     },
-    "legalLinks": {
-      "privacyPolicy": "Privacy Policy",
-      "termsOfService": "Terms of Service",
-      "cookiePolicy": "Cookie Policy",
-      "dpa": "DPA",
-      "sla": "SLA"
+    "hero": {
+        "badge": "GDPR Ready • Enterprise Security • 24/7 Support",
+        "headline": "AI Voice Agents that Book More Appointments and Close More Deals",
+        "subheadline": "24/7 phone coverage with human-level voice, qualifying leads, handling calls, and syncing your CRM automatically.",
+        "bookDemo": "Book a Demo",
+        "hearSample": "Hear a Live Sample",
+        "trustBar": "Powered by enterprise-grade technology",
+        "stats": {
+            "responseTime": {
+                "label": "Response Time",
+                "value": "<2min",
+                "change": "vs 2h avg"
+            },
+            "conversionRate": {
+                "label": "Conversion Rate",
+                "value": "+25%",
+                "change": "increase"
+            },
+            "costSavings": {
+                "label": "Cost Savings",
+                "value": "60%",
+                "change": "vs human staff"
+            }
+        }
     },
-    "copyright": "© 2025 Build Beyond. All rights reserved."
-  }
+    "valuePillars": {
+        "title": "Why Choose AI Voice Agents?",
+        "subtitle": "Transform your phone experience with AI that works around the clock, sounds completely human, and drives real business results.",
+        "stats": {
+            "responseTime": {
+                "label": "Response Time",
+                "value": "<2min",
+                "change": "vs 2h avg"
+            },
+            "conversionRate": {
+                "label": "Conversion Rate",
+                "value": "+25%",
+                "change": "increase"
+            },
+            "costSavings": {
+                "label": "Cost Savings",
+                "value": "35%",
+                "change": "vs human staff"
+            }
+        },
+        "pillars": {
+            "alwaysOn": {
+                "title": "Always On",
+                "description": "Never miss a lead again with 24/7 phone coverage that responds in under 2 minutes.",
+                "features": [
+                    "Instant call pickup",
+                    "No hold times",
+                    "24/7 availability",
+                    "Holiday coverage"
+                ]
+            },
+            "lowerCost": {
+                "title": "Lower Cost",
+                "description": "Replace or augment call center teams while improving response time and consistency.",
+                "features": [
+                    "30%-45% cost reduction",
+                    "No sick days",
+                    "Consistent quality",
+                    "Instant scaling"
+                ]
+            },
+            "revenueReady": {
+                "title": "Revenue-Ready",
+                "description": "Qualifies leads, schedules appointments, updates CRM, and triggers automated workflows.",
+                "features": [
+                    "Lead qualification",
+                    "Appointment booking",
+                    "CRM integration",
+                    "Workflow triggers"
+                ]
+            },
+            "humanLevel": {
+                "title": "Human-Level Voice",
+                "description": "Natural conversation with memory, context, and emotional intelligence that customers trust.",
+                "features": [
+                    "ElevenLabs TTS",
+                    "Context awareness",
+                    "Emotional responses",
+                    "Multiple languages"
+                ]
+            }
+        }
+    },
+    "audioDemo": {
+        "title": "Hear It In Action",
+        "subtitle": "Listen to real conversations powered by our AI voice agents. Each agent is customized for your industry and use case.",
+        "tabs": {
+            "receptionist": {
+                "name": "Receptionist",
+                "description": "Answering calls, booking appointments, handling FAQs",
+                "script": "Thanks for calling Metro Dental. I can book you in today - may I have your name and preferred time? We accept most insurance plans including BlueCross. I have Tuesday 10:30 or Wednesday 4:00 PM available. What works best for you?",
+                "duration": "0:32"
+            },
+            "outbound": {
+                "name": "Outbound Sales",
+                "description": "Following up on leads, qualifying prospects",
+                "script": "Hi Sarah, this is the booking line for Home Pro Services. You requested a quote for kitchen renovation yesterday. I can schedule our designer to visit this week - would morning or afternoon work better for you?",
+                "duration": "0:28"
+            }
+        },
+        "liveTranscript": "Live Transcript:"
+    },
+    "howItWorks": {
+        "badge": "Ready in under 3 Weeks",
+        "title": "How It Works",
+        "subtitle": "Get up and running with enterprise-grade AI voice agents in under 3 weeks. Our proven implementation process ensures success from day one.",
+        "steps": {
+            "week1": {
+                "title": "Connect & Configure",
+                "description": "Connect your phone number and CRM. We'll configure call flows, compliance settings, and voice preferences.",
+                "features": [
+                    "Phone number porting or forwarding",
+                    "CRM integration (Google calendar, Slack, etc.)",
+                    "Industry-specifics",
+                    "Compliance & consent setup"
+                ]
+            },
+            "week2": {
+                "title": "Customize & Train",
+                "description": "Build custom conversation flows, train the AI with your FAQs, and fine-tune the voice to match your brand.",
+                "features": [
+                    "Conversation flow design",
+                    "FAQ training & responses",
+                    "Voice tone customization",
+                    "Integration testing"
+                ]
+            },
+            "week3": {
+                "title": "Go Live & Monitor",
+                "description": "Launch your AI voice agent with real-time monitoring, analytics dashboard, and continuous optimization.",
+                "features": [
+                    "Soft launch with monitoring",
+                    "Real-time analytics",
+                    "Performance optimization",
+                    "24/7 support & monitoring"
+                ]
+            }
+        }
+    },
+    "getStarted": {
+        "title": "Get Started Today",
+        "subtitle": "Ready to transform your phone experience? Fill out the form below and we'll get back to you within 24 hours.",
+        "form": {
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email Address",
+            "phone": "Phone Number",
+            "company": "Company Name",
+            "industry": "Industry",
+            "message": "Tell us about your needs",
+            "placeholders": {
+                "firstName": "Enter your first name",
+                "lastName": "Enter your last name",
+                "email": "Enter your email",
+                "phone": "Enter your phone number",
+                "company": "Enter your company name",
+                "industry": "Select your industry",
+                "message": "Describe your current phone system challenges and what you're looking to achieve..."
+            },
+            "industries": {
+                "default": "Select your industry",
+                "healthcare": "Healthcare",
+                "realEstate": "Real Estate",
+                "automotive": "Automotive",
+                "professionalServices": "Professional Services",
+                "retail": "Retail",
+                "other": "Other"
+            },
+            "submit": "Send Message",
+            "sending": "Sending...",
+            "sent": "Sent!",
+            "successTitle": "Message Sent Successfully! 🎉",
+            "successMessage": "Thank you for reaching out! We'll get back to you within 24 hours.",
+            "successNote": "This message will disappear automatically",
+            "guarantee": "We'll respond within 24 hours • 30-day money-back guarantee"
+        }
+    },
+    "footer": {
+        "description": "Transform your business phone experience with AI voice agents that work 24/7, sound completely human, and drive real results.",
+        "location": "Barcelona, Spain",
+        "email": "taha@buildbeyondai.com",
+        "company": "Company",
+        "companyLinks": {
+            "aboutUs": "About Us",
+            "caseStudies": "Case Studies",
+            "security": "Security",
+            "contact": "Contact",
+            "bookDemo": "Book Demo"
+        },
+        "legalLinks": {
+            "privacyPolicy": "Privacy Policy",
+            "termsOfService": "Terms of Service",
+            "cookiePolicy": "Cookie Policy",
+            "dpa": "DPA",
+            "sla": "SLA"
+        },
+        "copyright": "© 2025 Build Beyond. All rights reserved."
+    }
 }
