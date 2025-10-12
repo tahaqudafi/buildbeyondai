@@ -201,6 +201,93 @@ const translations = {
         "guarantee": "We'll respond within 24 hours • 30-day money-back guarantee"
       }
     },
+    "aboutUs": {
+      "badge": "About Build Beyond AI",
+      "title": "Transforming Business Communications with AI Voice Technology",
+      "subtitle": "Born from a frustrating 30-minute hold with Amazon, we're building AI voice agents that ensure no one has to wait again. Fast, human-sounding support that works alongside your team, not against it.",
+      "stats": {
+        "uptime": "24/7",
+        "uptimeLabel": "Uptime Guarantee",
+        "responseTime": "2min",
+        "responseTimeLabel": "Average Response Time",
+        "reliability": "99.9%",
+        "reliabilityLabel": "Reliability Score"
+      },
+      "whyWeStarted": {
+        "title": "Why we started",
+        "content": "It began with a single, frustrating moment, 30 minutes on hold with Amazon while juggling meetings. That wait time became a question, what if no one had to wait again? What if every business could offer fast, human-sounding phone support around the clock, at a fraction of the cost of a full team?"
+      },
+      "whatWeBelieve": {
+        "title": "What we believe",
+        "content": "We believe AI is only the future when it works alongside humans. The best outcomes happen when technology amplifies human judgment, care, and creativity. Our voice agents are trained on the patterns, framing, and objection-handling of elite sales representatives who've closed millions, so callers experience clarity, empathy, and momentum in every conversation."
+      },
+      "howWereDifferent": {
+        "title": "How we're different",
+        "humanFirst": {
+          "title": "Human-first logic",
+          "description": "We model real sales and support playbooks, not robotic scripts."
+        },
+        "alwaysOn": {
+          "title": "Always on",
+          "description": "24/7 availability means fewer missed opportunities and no more \"please hold.\""
+        },
+        "onBrand": {
+          "title": "On-brand conversations",
+          "description": "Tone and language shaped to your business, not generic replies."
+        },
+        "serviceFocused": {
+          "title": "Focused on service businesses",
+          "description": "We're built for teams that live and die by the phone."
+        }
+      },
+      "whereWereGoing": {
+        "title": "Where we're going",
+        "content": "We're new, and we're all in. Low competition in a space with massive need means we're moving fast, learning faster, and putting everything on the line to build something that truly helps service-based businesses connect better, qualify faster, and convert more, without losing the human touch."
+      },
+      "values": {
+        "title": "Our Values",
+        "subtitle": "The principles that guide everything we do and every solution we create",
+        "humanFirstAI": {
+          "title": "Human-First AI",
+          "description": "Technology that amplifies human judgment, care, and creativity rather than replacing it."
+        },
+        "serviceFocused": {
+          "title": "Service-Focused",
+          "description": "Built specifically for teams that live and die by the phone - we understand your challenges."
+        },
+        "movingFast": {
+          "title": "Moving Fast",
+          "description": "Low competition, massive need - we're all in, learning faster and building something that truly helps."
+        },
+        "realResults": {
+          "title": "Real Results",
+          "description": "Connect better, qualify faster, convert more - without losing the human touch that matters."
+        }
+      },
+      "team": {
+        "title": "Meet Our Team",
+        "subtitle": "The passionate individuals behind Build Beyond AI",
+        "taha": {
+          "name": "Taha Al-Qudafi",
+          "role": "Founder & CEO",
+          "description": "AI entrepreneur with a passion for transforming business communications through intelligent voice technology."
+        },
+        "irini": {
+          "name": "Irini Anastasiadou",
+          "role": "Head of Sales",
+          "description": "Sales leader focused on helping businesses discover how AI voice agents can transform their customer communications and drive growth."
+        },
+        "linkedinText": "Connect on LinkedIn"
+      },
+      "contact": {
+        "title": "Get in Touch",
+        "subtitle": "Ready to transform your business communications? We'd love to hear from you.",
+        "location": "Location",
+        "locationValue": "Barcelona, Spain",
+        "email": "Email",
+        "bookDemo": "Book a Demo"
+      }
+    },
     "footer": {
       "description": "Transform your business phone experience with AI voice agents that work 24/7, sound completely human, and drive real results.",
       "location": "Barcelona, Spain",
@@ -413,6 +500,93 @@ const translations = {
         "successMessage": "¡Gracias por contactarnos! Te responderemos en 24 horas.",
         "successNote": "Este mensaje desaparecerá automáticamente",
         "guarantee": "Responderemos en 24 horas • Garantía de devolución de dinero de 30 días"
+      }
+    },
+    "aboutUs": {
+      "badge": "Acerca de Build Beyond AI",
+      "title": "Transformando las Comunicaciones Empresariales con Tecnología de Voz IA",
+      "subtitle": "Nacido de una frustrante espera de 30 minutos con Amazon, estamos construyendo agentes de voz IA que aseguran que nadie tenga que esperar de nuevo. Soporte rápido y de sonido humano que trabaja junto a tu equipo, no en su contra.",
+      "stats": {
+        "uptime": "24/7",
+        "uptimeLabel": "Garantía de Tiempo Activo",
+        "responseTime": "2min",
+        "responseTimeLabel": "Tiempo de Respuesta Promedio",
+        "reliability": "99.9%",
+        "reliabilityLabel": "Puntuación de Confiabilidad"
+      },
+      "whyWeStarted": {
+        "title": "Por qué empezamos",
+        "content": "Comenzó con un momento único y frustrante, 30 minutos en espera con Amazon mientras hacía malabarismos con reuniones. Ese tiempo de espera se convirtió en una pregunta, ¿qué pasaría si nadie tuviera que esperar de nuevo? ¿Qué pasaría si cada negocio pudiera ofrecer soporte telefónico rápido y de sonido humano las 24 horas, a una fracción del costo de un equipo completo?"
+      },
+      "whatWeBelieve": {
+        "title": "En qué creemos",
+        "content": "Creemos que la IA solo es el futuro cuando trabaja junto a los humanos. Los mejores resultados ocurren cuando la tecnología amplifica el juicio humano, el cuidado y la creatividad. Nuestros agentes de voz están entrenados en los patrones, el encuadre y el manejo de objeciones de representantes de ventas élite que han cerrado millones, para que las personas que llaman experimenten claridad, empatía y impulso en cada conversación."
+      },
+      "howWereDifferent": {
+        "title": "Cómo somos diferentes",
+        "humanFirst": {
+          "title": "Lógica centrada en humanos",
+          "description": "Modelamos libros de jugadas reales de ventas y soporte, no guiones robóticos."
+        },
+        "alwaysOn": {
+          "title": "Siempre activo",
+          "description": "Disponibilidad 24/7 significa menos oportunidades perdidas y no más \"por favor espere\"."
+        },
+        "onBrand": {
+          "title": "Conversaciones de marca",
+          "description": "Tono y lenguaje adaptados a tu negocio, no respuestas genéricas."
+        },
+        "serviceFocused": {
+          "title": "Enfocado en negocios de servicio",
+          "description": "Estamos construidos para equipos que viven y mueren por el teléfono."
+        }
+      },
+      "whereWereGoing": {
+        "title": "Hacia dónde vamos",
+        "content": "Somos nuevos, y estamos completamente comprometidos. Baja competencia en un espacio con necesidad masiva significa que nos movemos rápido, aprendemos más rápido, y ponemos todo en juego para construir algo que realmente ayude a los negocios basados en servicios a conectar mejor, calificar más rápido y convertir más, sin perder el toque humano."
+      },
+      "values": {
+        "title": "Nuestros Valores",
+        "subtitle": "Los principios que guían todo lo que hacemos y cada solución que creamos",
+        "humanFirstAI": {
+          "title": "IA Centrada en Humanos",
+          "description": "Tecnología que amplifica el juicio humano, el cuidado y la creatividad en lugar de reemplazarla."
+        },
+        "serviceFocused": {
+          "title": "Enfocado en Servicios",
+          "description": "Construido específicamente para equipos que viven y mueren por el teléfono - entendemos tus desafíos."
+        },
+        "movingFast": {
+          "title": "Moviéndose Rápido",
+          "description": "Baja competencia, necesidad masiva - estamos completamente comprometidos, aprendiendo más rápido y construyendo algo que realmente ayuda."
+        },
+        "realResults": {
+          "title": "Resultados Reales",
+          "description": "Conectar mejor, calificar más rápido, convertir más - sin perder el toque humano que importa."
+        }
+      },
+      "team": {
+        "title": "Conoce Nuestro Equipo",
+        "subtitle": "Los individuos apasionados detrás de Build Beyond AI",
+        "taha": {
+          "name": "Taha Al-Qudafi",
+          "role": "Fundador y CEO",
+          "description": "Emprendedor de IA con pasión por transformar las comunicaciones empresariales a través de tecnología de voz inteligente."
+        },
+        "irini": {
+          "name": "Irini Anastasiadou",
+          "role": "Jefa de Ventas",
+          "description": "Líder de ventas enfocada en ayudar a las empresas a descubrir cómo los agentes de voz IA pueden transformar sus comunicaciones con clientes e impulsar el crecimiento."
+        },
+        "linkedinText": "Conectar en LinkedIn"
+      },
+      "contact": {
+        "title": "Ponte en Contacto",
+        "subtitle": "¿Listo para transformar tus comunicaciones empresariales? Nos encantaría saber de ti.",
+        "location": "Ubicación",
+        "locationValue": "Barcelona, España",
+        "email": "Correo Electrónico",
+        "bookDemo": "Reservar Demo"
       }
     },
     "footer": {

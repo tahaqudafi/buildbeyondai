@@ -204,5 +204,26 @@
             "sla": "SLA"
         },
         "copyright": "© 2025 Build Beyond. All rights reserved."
+    },
+    "aboutUs": {
+        "title": "About Build Beyond AI",
+        "subtitle": "Transforming Business Communications with AI Voice Technology",
+        "description": "We're on a mission to make AI voice agents accessible to every business, helping them provide better customer experiences while reducing costs and increasing efficiency.",
+        "story": {
+            "title": "Our Story",
+            "content": "Build Beyond AI was founded with a simple yet powerful vision: to make AI voice technology accessible and effective for businesses of all sizes. We recognized that while AI had made tremendous advances, many businesses were still struggling with outdated phone systems and missed opportunities."
+        },
+        "values": {
+            "title": "Our Values",
+            "subtitle": "The principles that guide everything we do and every solution we create"
+        },
+        "team": {
+            "title": "Meet Our Team",
+            "subtitle": "The passionate individuals behind Build Beyond AI"
+        },
+        "contact": {
+            "title": "Get in Touch",
+            "subtitle": "Ready to transform your business communications? We'd love to hear from you."
+        }
     }
 }

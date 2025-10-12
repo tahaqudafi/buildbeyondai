@@ -22,13 +22,14 @@ const Footer = () => {
   ];
 
   const legalLinks = [
-    { name: t("footer.legalLinks.privacyPolicy"), href: "/legal/privacy" },
-    { name: t("footer.legalLinks.termsOfService"), href: "/legal/terms" },
-    { name: t("footer.legalLinks.cookiePolicy"), href: "/legal/cookies" }
+    { name: t("footer.legalLinks.privacyPolicy"), href: "/privacy-policy" },
+    { name: t("footer.legalLinks.termsOfService"), href: "/terms-of-service" },
+    { name: t("footer.legalLinks.cookiePolicy"), href: "/cookie-policy" }
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: "https://www.linkedin.com/in/taha-al-qudafi-4a37511b8", label: "LinkedIn" }
+    { icon: Linkedin, href: "https://www.linkedin.com/company/build-beyond-ai/", label: "Build Beyond AI LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/taha-al-qudafi-4a37511b8", label: "Taha's LinkedIn" }
   ];
 
   return (
