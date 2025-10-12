@@ -11,16 +11,32 @@ const GetStarted = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const formData = new FormData(e.currentTarget);
+      
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    // Reset after 5 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 5000);
+      if (response.ok) {
+        setIsSubmitted(true);
+        // Reset form
+        e.currentTarget.reset();
+        
+        // Reset success state after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // You might want to show an error message to the user here
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -76,6 +92,9 @@ const GetStarted = () => {
             )}
 
             <form onSubmit={handleSubmit} className={`grid grid-cols-1 md:grid-cols-2 gap-6 transition-opacity duration-300 ${isSubmitted ? 'opacity-20' : 'opacity-100'}`}>
+              {/* Web3Forms Access Key */}
+              <input type="hidden" name="access_key" value="61d71618-bab1-469d-bc83-51075999ce57" />
+              
               <div className="space-y-2">
                 <label htmlFor="firstName" className="text-sm font-medium text-foreground">
                   {t("getStarted.form.firstName")} *
@@ -182,10 +201,10 @@ const GetStarted = () => {
                   type="submit"
                   disabled={isSubmitting || isSubmitted}
                   className={`btn-hero px-8 py-4 text-lg transition-all duration-300 ${isSubmitting
-                      ? 'opacity-75 cursor-not-allowed transform scale-95'
-                      : isSubmitted
-                        ? 'opacity-50 cursor-not-allowed'
-                        : 'hover:scale-105'
+                    ? 'opacity-75 cursor-not-allowed transform scale-95'
+                    : isSubmitted
+                      ? 'opacity-50 cursor-not-allowed'
+                      : 'hover:scale-105'
                     }`}
                 >
                   {isSubmitting ? (
