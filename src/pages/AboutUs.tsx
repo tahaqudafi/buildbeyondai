@@ -14,7 +14,7 @@ const AboutUs = () => {
         {
             name: t("aboutUs.team.taha.name"),
             role: t("aboutUs.team.taha.role"),
-            image: "/images/taha.jpg",
+            image: "/images/taha2.png",
             linkedin: "https://www.linkedin.com/in/taha-al-qudafi-4a37511b8",
             description: t("aboutUs.team.taha.description")
         },
