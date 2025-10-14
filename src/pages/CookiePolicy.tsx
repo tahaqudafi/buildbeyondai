@@ -97,8 +97,8 @@ const CookiePolicy = () => {
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Contact Us</h2>
               <p className="text-gray-600">
                 If you have any questions about our use of cookies, please contact us at{" "}
-                <a href="mailto:cookies@example.com" className="text-blue-600 hover:underline">
-                  cookies@example.com
+                <a href="mailto:taha@buildbeyondai.com" className="text-blue-600 hover:underline">
+                  taha@buildbeyondai.com
                 </a>
               </p>
             </section>

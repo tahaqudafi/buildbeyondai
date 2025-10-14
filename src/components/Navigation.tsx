@@ -15,7 +15,7 @@ const Navigation = () => {
     if (element) {
       const elementPosition = element.offsetTop;
       const offsetPosition = elementPosition - 100; // Scroll 100px above the section
-      
+
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
@@ -24,6 +24,7 @@ const Navigation = () => {
   };
 
   const navItems = [
+    { name: t("footer.companyLinks.aboutUs"), action: () => window.location.href = "/about" },
     { name: t("navigation.contact"), action: () => scrollToSection("get-started") },
   ];
 

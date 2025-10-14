@@ -78,7 +78,7 @@ const TermsOfService = () => {
               <p className="text-gray-600">
                 If you have any questions about these Terms of Service, please contact us at{" "}
                 <a href="mailto:legal@example.com" className="text-blue-600 hover:underline">
-                  legal@example.com
+                  taha@buildbeyondai.com
                 </a>
               </p>
             </section>
