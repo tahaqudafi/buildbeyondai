@@ -63,24 +63,13 @@ const Navigation = () => {
                 </button>
               ))}
               {/* Language Switch */}
-              <Button
-                variant="ghost"
-                size="sm"
+              <button
                 onClick={toggleLanguage}
-                className="flex items-center space-x-2 text-sm font-medium px-3 py-2 bg-transparent text-black hover:text-white transition-colors"
-                style={{ 
-                  '--hover-bg': 'rgb(8,97,64)'
-                } as React.CSSProperties}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgb(8,97,64)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                }}
+                className="nav-link text-sm font-medium px-3 py-2 bg-transparent border-none cursor-pointer flex items-center space-x-2"
               >
                 <Globe className="w-4 h-4" />
                 <span>{language === 'en' ? 'ES' : 'EN'}</span>
-              </Button>
+              </button>
             </div>
           </div>
 
@@ -126,13 +115,7 @@ const Navigation = () => {
                 toggleLanguage();
                 setIsOpen(false);
               }}
-              className="flex items-center space-x-2 px-3 py-2 text-base font-medium bg-transparent text-black hover:text-white transition-colors w-full text-left border-none cursor-pointer rounded-md"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgb(8,97,64)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-              }}
+              className="flex items-center space-x-2 px-3 py-2 text-base font-medium text-foreground/80 hover:text-foreground transition-colors w-full text-left bg-transparent border-none cursor-pointer"
             >
               <Globe className="w-4 h-4" />
               <span>{language === 'en' ? 'Español' : 'English'}</span>
