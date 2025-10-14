@@ -16,6 +16,8 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState([0.7]);
   const [isMuted, setIsMuted] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
@@ -36,7 +38,7 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
       description: t("audioDemo.tabs.outbound.description"),
       script: t("audioDemo.tabs.outbound.script"),
       duration: t("audioDemo.tabs.outbound.duration"),
-      audioFile: "/audio/out bound.mp3"
+      audioFile: "/audio/outbound.mp3"
     }
   ];
 
@@ -47,8 +49,24 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
       if (isPlaying) {
         audioRef.current.pause();
       } else {
-        // Load the correct audio file for the active tab
-        audioRef.current.src = activeDemo?.audioFile || "";
+        // Only load the audio file if it's not already loaded or is different
+        const currentSrc = audioRef.current.src;
+        const newSrc = activeDemo?.audioFile || "";
+        
+        // Normalize URLs for comparison (handle encoding differences)
+        const normalizeUrl = (url: string) => {
+          if (!url) return "";
+          // Remove origin if present and decode URI components
+          const path = url.replace(window.location.origin, "");
+          return decodeURIComponent(path);
+        };
+        
+        const normalizedCurrent = normalizeUrl(currentSrc);
+        const normalizedNew = normalizeUrl(newSrc);
+        
+        if (!currentSrc || normalizedCurrent !== normalizedNew) {
+          audioRef.current.src = newSrc;
+        }
         audioRef.current.play();
       }
       setIsPlaying(!isPlaying);
@@ -69,13 +87,45 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
     }
   };
 
+  const handleTimeUpdate = () => {
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime);
+    }
+  };
+
+  const handleLoadedMetadata = () => {
+    if (audioRef.current) {
+      setDuration(audioRef.current.duration);
+    }
+  };
+
+  const handleSeek = (newTime: number[]) => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = newTime[0];
+      setCurrentTime(newTime[0]);
+    }
+  };
+
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  };
+
   // Update audio source when tab changes
   const handleTabChange = (tabId: string) => {
-    if (isPlaying && audioRef.current) {
-      audioRef.current.pause();
-      setIsPlaying(false);
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+        setIsPlaying(false);
+      }
+      // Reset audio source to force reload of new audio file
+      audioRef.current.src = "";
+      audioRef.current.currentTime = 0;
     }
     setActiveTab(tabId);
+    setCurrentTime(0);
+    setDuration(0);
   };
 
   return (
@@ -202,71 +252,99 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
                 </motion.div>
               </div>
 
-              {/* Duration Display - Centered */}
+              {/* Audio Scrubber - Mobile */}
               <motion.div
-                className="flex justify-center"
+                className="space-y-2"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
               >
-                <span className="text-sm font-medium text-muted-foreground">
-                  {activeDemo?.duration}
-                </span>
+                <Slider
+                  value={[currentTime]}
+                  onValueChange={handleSeek}
+                  max={duration || 100}
+                  step={0.1}
+                  className="w-full"
+                />
+                <div className="flex justify-between text-xs text-muted-foreground">
+                  <span>{formatTime(currentTime)}</span>
+                  <span>{duration ? formatTime(duration) : activeDemo?.duration}</span>
+                </div>
               </motion.div>
             </div>
 
             {/* Desktop Layout */}
-            <div className="hidden md:flex items-center justify-center space-x-6 mb-4">
+            <div className="hidden md:block mb-4">
+              {/* Audio Scrubber - Desktop */}
               <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                className="mb-4"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
               >
-                <Button
-                  onClick={togglePlay}
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground w-16 h-16 rounded-full p-0 shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <motion.div
-                    key={isPlaying ? 'pause' : 'play'}
-                    initial={{ scale: 0, rotate: -90 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6 ml-1" />}
-                  </motion.div>
-                </Button>
+                <Slider
+                  value={[currentTime]}
+                  onValueChange={handleSeek}
+                  max={duration || 100}
+                  step={0.1}
+                  className="w-full mb-2"
+                />
+                <div className="flex justify-between text-xs text-muted-foreground">
+                  <span>{formatTime(currentTime)}</span>
+                  <span>{duration ? formatTime(duration) : activeDemo?.duration}</span>
+                </div>
               </motion.div>
 
-              {/* Volume Control */}
-              <motion.div
-                className="flex items-center space-x-3 min-w-[200px]"
-                initial={{ opacity: 0, x: 10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-              >
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={toggleMute}
-                  className="p-2 hover:bg-primary/10"
+              {/* Controls Row */}
+              <div className="flex items-center justify-center space-x-6">
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                 >
-                  {isMuted ? (
-                    <VolumeX className="h-4 w-4 text-muted-foreground" />
-                  ) : (
-                    <Volume2 className="h-4 w-4 text-accent" />
-                  )}
-                </Button>
-                <Slider
-                  value={volume}
-                  onValueChange={handleVolumeChange}
-                  max={1}
-                  step={0.1}
-                  className="flex-1"
-                />
-                <span className="text-sm font-medium text-muted-foreground min-w-[60px]">
-                  {activeDemo?.duration}
-                </span>
-              </motion.div>
+                  <Button
+                    onClick={togglePlay}
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground w-16 h-16 rounded-full p-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <motion.div
+                      key={isPlaying ? 'pause' : 'play'}
+                      initial={{ scale: 0, rotate: -90 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6 ml-1" />}
+                    </motion.div>
+                  </Button>
+                </motion.div>
+
+                {/* Volume Control */}
+                <motion.div
+                  className="flex items-center space-x-3 min-w-[200px]"
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: 0.2 }}
+                >
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={toggleMute}
+                    className="p-2 hover:bg-primary/10"
+                  >
+                    {isMuted ? (
+                      <VolumeX className="h-4 w-4 text-muted-foreground" />
+                    ) : (
+                      <Volume2 className="h-4 w-4 text-accent" />
+                    )}
+                  </Button>
+                  <Slider
+                    value={volume}
+                    onValueChange={handleVolumeChange}
+                    max={1}
+                    step={0.1}
+                    className="flex-1"
+                  />
+                </motion.div>
+              </div>
             </div>
 
             {/* Waveform Placeholder */}
@@ -303,6 +381,8 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
             <audio
               ref={audioRef}
               onEnded={() => setIsPlaying(false)}
+              onTimeUpdate={handleTimeUpdate}
+              onLoadedMetadata={handleLoadedMetadata}
               onLoadedData={() => {
                 if (audioRef.current) {
                   audioRef.current.volume = volume[0];
