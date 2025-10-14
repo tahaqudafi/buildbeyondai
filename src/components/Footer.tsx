@@ -100,20 +100,20 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="mt-8 pt-6 border-t border-border/50">
-          <div className="flex flex-col lg:flex-row justify-between items-center">
-            <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-4 lg:mb-0">
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-3 sm:gap-6">
               {legalLinks.map((link, index) => (
                 <a
                   key={index}
                   href={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors text-center"
                 >
                   {link.name}
                 </a>
               ))}
             </div>
 
-            <div className="flex items-center space-x-6">
+            <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-6">
               {/* Language Switcher */}
               <div className="flex items-center space-x-2">
                 <button 
@@ -131,7 +131,7 @@ const Footer = () => {
                 </button>
               </div>
 
-              <div className="text-sm text-muted-foreground">
+              <div className="text-sm text-muted-foreground text-center">
                 {t("footer.copyright")}
               </div>
             </div>
