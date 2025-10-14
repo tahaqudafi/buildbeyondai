@@ -202,33 +202,14 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
                 </motion.div>
               </div>
 
-              {/* Volume Control - Full Width */}
+              {/* Duration Display - Centered */}
               <motion.div
-                className="flex items-center space-x-3 w-full"
-                initial={{ opacity: 0, x: 10 }}
-                animate={{ opacity: 1, x: 0 }}
+                className="flex justify-center"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
               >
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={toggleMute}
-                  className="p-2 hover:bg-primary/10 flex-shrink-0"
-                >
-                  {isMuted ? (
-                    <VolumeX className="h-4 w-4 text-muted-foreground" />
-                  ) : (
-                    <Volume2 className="h-4 w-4 text-accent" />
-                  )}
-                </Button>
-                <Slider
-                  value={volume}
-                  onValueChange={handleVolumeChange}
-                  max={1}
-                  step={0.1}
-                  className="flex-1"
-                />
-                <span className="text-sm font-medium text-muted-foreground flex-shrink-0">
+                <span className="text-sm font-medium text-muted-foreground">
                   {activeDemo?.duration}
                 </span>
               </motion.div>
