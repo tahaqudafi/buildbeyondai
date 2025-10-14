@@ -52,7 +52,7 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
         // Only load the audio file if it's not already loaded or is different
         const currentSrc = audioRef.current.src;
         const newSrc = activeDemo?.audioFile || "";
-        
+
         // Normalize URLs for comparison (handle encoding differences)
         const normalizeUrl = (url: string) => {
           if (!url) return "";
@@ -60,10 +60,10 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
           const path = url.replace(window.location.origin, "");
           return decodeURIComponent(path);
         };
-        
+
         const normalizedCurrent = normalizeUrl(currentSrc);
         const normalizedNew = normalizeUrl(newSrc);
-        
+
         if (!currentSrc || normalizedCurrent !== normalizedNew) {
           audioRef.current.src = newSrc;
         }
@@ -275,28 +275,8 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
 
             {/* Desktop Layout */}
             <div className="hidden md:block mb-4">
-              {/* Audio Scrubber - Desktop */}
-              <motion.div
-                className="mb-4"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-              >
-                <Slider
-                  value={[currentTime]}
-                  onValueChange={handleSeek}
-                  max={duration || 100}
-                  step={0.1}
-                  className="w-full mb-2"
-                />
-                <div className="flex justify-between text-xs text-muted-foreground">
-                  <span>{formatTime(currentTime)}</span>
-                  <span>{duration ? formatTime(duration) : activeDemo?.duration}</span>
-                </div>
-              </motion.div>
-
               {/* Controls Row */}
-              <div className="flex items-center justify-center space-x-6">
+              <div className="flex items-center justify-center space-x-6 mb-8">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -345,37 +325,28 @@ const AudioDemo = ({ className }: AudioDemoProps) => {
                   />
                 </motion.div>
               </div>
+
+              {/* Audio Scrubber - Desktop (moved to bottom) */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+              >
+                <Slider
+                  value={[currentTime]}
+                  onValueChange={handleSeek}
+                  max={duration || 100}
+                  step={0.1}
+                  className="w-full mb-2"
+                />
+                <div className="flex justify-between text-xs text-muted-foreground">
+                  <span>{formatTime(currentTime)}</span>
+                  <span>{duration ? formatTime(duration) : activeDemo?.duration}</span>
+                </div>
+              </motion.div>
             </div>
 
-            {/* Waveform Placeholder */}
-            <motion.div
-              className="flex items-center justify-center space-x-1 h-12 mb-4 overflow-hidden"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              {Array.from({ length: 40 }).map((_, i) => (
-                <motion.div
-                  key={i}
-                  className={cn(
-                    "w-0.5 md:w-1 bg-gradient-to-t from-primary/40 to-accent/40 rounded-full transition-all duration-300",
-                    isPlaying && i < 20 ? "bg-gradient-to-t from-primary to-accent animate-pulse shadow-sm" : "",
-                    i > 25 ? "hidden md:block" : ""
-                  )}
-                  style={{
-                    height: `${Math.random() * 32 + 8}px`,
-                    animationDelay: `${i * 50}ms`
-                  }}
-                  initial={{ scaleY: 0 }}
-                  animate={{ scaleY: 1 }}
-                  transition={{
-                    duration: 0.3,
-                    delay: 0.4 + i * 0.02,
-                    ease: "easeOut"
-                  }}
-                />
-              ))}
-            </motion.div>
+
 
             {/* Audio element */}
             <audio
