@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -8,7 +8,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { isVisible } = useScrollDirection();
-  const { t } = useLanguage();
+  const { t, language, setLanguage } = useLanguage();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -21,6 +21,10 @@ const Navigation = () => {
         behavior: 'smooth'
       });
     }
+  };
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'es' : 'en');
   };
 
   const navItems = [
@@ -58,6 +62,25 @@ const Navigation = () => {
                   {item.name}
                 </button>
               ))}
+              {/* Language Switch */}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleLanguage}
+                className="flex items-center space-x-2 text-sm font-medium px-3 py-2 bg-transparent text-black hover:text-white transition-colors"
+                style={{ 
+                  '--hover-bg': 'rgb(8,97,64)'
+                } as React.CSSProperties}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgb(8,97,64)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                }}
+              >
+                <Globe className="w-4 h-4" />
+                <span>{language === 'en' ? 'ES' : 'EN'}</span>
+              </Button>
             </div>
           </div>
 
@@ -97,6 +120,23 @@ const Navigation = () => {
                 {item.name}
               </button>
             ))}
+            {/* Mobile Language Switch */}
+            <button
+              onClick={() => {
+                toggleLanguage();
+                setIsOpen(false);
+              }}
+              className="flex items-center space-x-2 px-3 py-2 text-base font-medium bg-transparent text-black hover:text-white transition-colors w-full text-left border-none cursor-pointer rounded-md"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgb(8,97,64)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }}
+            >
+              <Globe className="w-4 h-4" />
+              <span>{language === 'en' ? 'Español' : 'English'}</span>
+            </button>
           </div>
         </div>
       </div>
