@@ -74,7 +74,7 @@ const LottieAnimation = ({
     <div
       ref={containerRef}
       className={className}
-      style={{ maxWidth: '100%', maxHeight: '100%', marginLeft: '20px', marginTop: '-20px' }}
+      style={{ maxWidth: '100%', maxHeight: '100%', marginLeft: '20px', marginTop: '5px' }}
     />
   );
 };
