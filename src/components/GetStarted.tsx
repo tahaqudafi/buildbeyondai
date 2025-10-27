@@ -13,7 +13,7 @@ const GetStarted = () => {
 
     try {
       const formData = new FormData(e.currentTarget);
-      
+
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
@@ -23,7 +23,7 @@ const GetStarted = () => {
         setIsSubmitted(true);
         // Reset form
         e.currentTarget.reset();
-        
+
         // Reset success state after 5 seconds
         setTimeout(() => {
           setIsSubmitted(false);
@@ -94,7 +94,7 @@ const GetStarted = () => {
             <form onSubmit={handleSubmit} className={`grid grid-cols-1 md:grid-cols-2 gap-6 transition-opacity duration-300 ${isSubmitted ? 'opacity-20' : 'opacity-100'}`}>
               {/* Web3Forms Access Key */}
               <input type="hidden" name="access_key" value="61d71618-bab1-469d-bc83-51075999ce57" />
-              
+
               <div className="space-y-2">
                 <label htmlFor="firstName" className="text-sm font-medium text-foreground">
                   {t("getStarted.form.firstName")} *

@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Play, ArrowRight, Phone, Clock, TrendingUp, DollarSign } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../contexts/LanguageContext";
+import LottieAnimation from "./LottieAnimation";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -22,8 +23,8 @@ const Hero = () => {
   const trustLogos = [
     { name: "Telnyx", src: "/images/telnyx.svg" },
     { name: "Twilio", src: "/images/twillio.svg" },
-    { name: "ElevenLabs", src: "/images/11labs.svg" },
-    { name: "Retell", src: "/images/retell.svg" },
+    { name: "deepgram", src: "/images/deepgram.svg" },
+    { name: "Azure", src: "/images/azure.svg" },
     { name: "Gigas", src: "/images/gigas.svg" },
     { name: "OpenRouter", src: "/images/OR.svg" }
   ];
@@ -42,92 +43,121 @@ const Hero = () => {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.6,
-              delay: 0,
-              ease: [0.25, 0.46, 0.45, 0.94]
-            }}
-          >
-            <Badge className="inline-flex items-center px-4 py-2 mb-8 bg-primary/20 text-primary border-primary/30 hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer">
-              <Phone className="h-4 w-4 mr-2" />
-              {t("hero.badge")}
-            </Badge>
-          </motion.div>
-
-          {/* Main Headline */}
-          <motion.h1
-            className="text-hero font-lemonmilk mb-6 max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.2,
-              ease: [0.25, 0.46, 0.45, 0.94]
-            }}
-            dangerouslySetInnerHTML={{ __html: t("hero.headline").replace(/Book More Appointments|Reservan mas Citas/g, '<span class="gradient-text">$&</span>').replace(/Close More Deals|Cierran mas Ventas/g, '<span class="gradient-text">$&</span>') }}
-          />
-
-          {/* Subheadline */}
-          <motion.p
-            className="text-subheading text-muted-foreground max-w-3xl mx-auto mb-10"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.4,
-              ease: [0.25, 0.46, 0.45, 0.94]
-            }}
-          >
-            {t("hero.subheadline")}
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.6,
-              ease: [0.25, 0.46, 0.45, 0.94]
-            }}
-          >
+        {/* Grid Layout for Desktop, Single Column for Mobile */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Text Content - Center Aligned */}
+          <div className="text-center order-2 lg:order-1">
+            {/* Badge */}
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: 0,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
             >
-              <Button
-                size="lg"
-                className="btn-hero text-lg px-8 py-4"
-                onClick={() => scrollToSection('get-started')}
-              >
-                {t("hero.bookDemo")}
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Badge className="inline-flex items-center px-4 py-2 mb-8 bg-primary/20 text-primary border-primary/30 hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer">
+                <Phone className="h-4 w-4 mr-2" />
+                {t("hero.badge")}
+              </Badge>
             </motion.div>
+
+            {/* Main Headline */}
+            <motion.h1
+              className="text-hero font-lemonmilk mb-6 max-w-4xl lg:max-w-none mx-auto lg:mx-0"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+              dangerouslySetInnerHTML={{ __html: t("hero.headline").replace(/Book More Appointments|Reservan mas Citas/g, '<span class="gradient-text">$&</span>').replace(/Close More Deals|Cierran mas Ventas/g, '<span class="gradient-text">$&</span>') }}
+            />
+
+            {/* Subheadline */}
+            <motion.p
+              className="text-subheading text-muted-foreground max-w-3xl lg:max-w-none mx-auto lg:mx-0 mb-10"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.4,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+            >
+              {t("hero.subheadline")}
+            </motion.p>
+
+            {/* CTAs */}
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
             >
-              <Button
-                variant="outline"
-                size="lg"
-                className="btn-ghost-light text-lg px-8 py-4"
-                onClick={() => scrollToSection('hear-it-in-action')}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <Play className="mr-2 h-5 w-5" />
-                {t("hero.hearSample")}
-              </Button>
+                <Button
+                  size="lg"
+                  className="btn-hero text-lg px-8 py-4"
+                  onClick={() => scrollToSection('get-started')}
+                >
+                  {t("hero.bookDemo")}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="btn-ghost-light text-lg px-8 py-4"
+                  onClick={() => scrollToSection('hear-it-in-action')}
+                >
+                  <Play className="mr-2 h-5 w-5" />
+                  {t("hero.hearSample")}
+                </Button>
+              </motion.div>
             </motion.div>
-          </motion.div>
 
 
-          {/* Trust Bar */}
+          </div>
+
+          {/* Lottie Animation - Right Side */}
+          <div className="hidden lg:flex justify-center items-center order-1 lg:order-2">
+            <motion.div
+              className="w-full max-w-2xl h-[600px]"
+              style={{ marginTop: '-85px', marginLeft: '100px', transform: 'scale(1.5)' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 1.2,
+                delay: 0.8,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+            >
+              <LottieAnimation
+                src="/images/lottie.json"
+                className="w-full h-full"
+                loop={true}
+                autoplay={true}
+              />
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Trust Bar - Full Width Below */}
+        <div className="mt-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -138,7 +168,7 @@ const Hero = () => {
             }}
           >
             <motion.p
-              className="text-sm text-muted-foreground mb-6"
+              className="text-sm text-muted-foreground mb-6 text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
