@@ -7,11 +7,11 @@ interface LottieAnimationProps {
   autoplay?: boolean;
 }
 
-const LottieAnimation = ({ 
-  src, 
-  className = "w-full h-full", 
-  loop = true, 
-  autoplay = true 
+const LottieAnimation = ({
+  src,
+  className = "w-full h-full",
+  loop = true,
+  autoplay = true
 }: LottieAnimationProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [animationData, setAnimationData] = useState(null);
@@ -32,7 +32,7 @@ const LottieAnimation = ({
       try {
         // Dynamically import lottie-web to avoid build errors if not installed
         const lottie = await import('lottie-web');
-        
+
         if (containerRef.current && animationData) {
           animationInstance = lottie.default.loadAnimation({
             container: containerRef.current,
@@ -71,10 +71,10 @@ const LottieAnimation = ({
   }
 
   return (
-    <div 
-      ref={containerRef} 
+    <div
+      ref={containerRef}
       className={className}
-      style={{ maxWidth: '100%', maxHeight: '100%' }}
+      style={{ maxWidth: '100%', maxHeight: '100%', marginLeft: '20px', marginTop: '-20px' }}
     />
   );
 };

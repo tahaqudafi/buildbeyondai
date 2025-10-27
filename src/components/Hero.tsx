@@ -137,7 +137,7 @@ const Hero = () => {
           <div className="hidden lg:flex justify-center items-center order-1 lg:order-2">
             <motion.div
               className="w-full max-w-2xl h-[600px]"
-              style={{ marginTop: '-85px', marginLeft: '100px', transform: 'scale(1.5)' }}
+              style={{ marginTop: '-85px', marginLeft: '150px', transform: 'scale(1.9)' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
